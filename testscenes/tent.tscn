@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://x14jnyuvpbbr"]
+
+[ext_resource type="Script" uid="uid://k8n4nbsk5er6" path="res://testscenes/object.gd" id="1_qxh2c"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8qe3t"]
+load_path = "res://.godot/imported/camp_B.png-20b8afbc8422a9625b62a1e352cd62a9.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h40w2"]
+size = Vector2(96, 40.0608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22y1v"]
+size = Vector2(95.5, 70.5)
+
+[node name="Tent" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 17
+script = ExtResource("1_qxh2c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(2.96, 2.96)
+texture = SubResource("CompressedTexture2D_8qe3t")
+region_enabled = true
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 43.29)
+scale = Vector2(2.96, 2.96)
+shape = SubResource("RectangleShape2D_h40w2")
+debug_color = Color(0, 0.6, 0.701961, 0.619608)
+
+[node name="interactablearea" type="Area2D" parent="." groups=["interactable"]]
+unique_name_in_owner = true
+scale = Vector2(2.96, 2.96)
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactablearea"]
+position = Vector2(1.25, -2.25)
+shape = SubResource("RectangleShape2D_22y1v")
+
+[connection signal="area_entered" from="interactablearea" to="." method="_on_interactablearea_player_entered"]
+[connection signal="area_exited" from="interactablearea" to="." method="_on_interactablearea_player_exited"]

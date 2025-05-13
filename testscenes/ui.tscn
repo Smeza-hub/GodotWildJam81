@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdndxhgqtnbd2"]
+
+[ext_resource type="Script" uid="uid://7vdl5vkjvrev" path="res://ui.gd" id="1_cme3w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjxig"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5w2p"]
+bg_color = Color(0.595195, 0.0971247, 0.0615815, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.243137, 0.243137, 0.243137, 0)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvr7"]
+bg_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cme3w")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -34.0
+offset_right = 50.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(50, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_fjxig")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v5w2p")
+value = 50.0
+show_percentage = false
+
+[node name="ToleranceBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -16.0
+offset_right = 50.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(50, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_fjxig")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v5w2p")
+value = 50.0
+show_percentage = false
+
+[node name="PartyMeter" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_bottom = 27.0
+grow_horizontal = 0
+pivot_offset = Vector2(300, 0)
+theme_override_styles/fill = SubResource("StyleBoxFlat_yjvr7")
+value = 50.0
+show_percentage = false
