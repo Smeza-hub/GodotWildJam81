@@ -798,6 +798,10 @@ tracks/1/keys = {
 "values": [ExtResource("4_0ct7i")]
 }
 
+[sub_resource type="Animation" id="Animation_iecfd"]
+resource_name = "Glow_col_pulse"
+loop_mode = 2
+
 [sub_resource type="Animation" id="Animation_gs10s"]
 length = 0.001
 tracks/0/type = "value"
@@ -1065,10 +1069,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_iecfd"]
-resource_name = "Glow_col_pulse"
-loop_mode = 2
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
 _data = {

@@ -801,6 +801,10 @@ tracks/1/keys = {
 "values": [ExtResource("4_l524k")]
 }
 
+[sub_resource type="Animation" id="Animation_iecfd"]
+resource_name = "Glow_col_pulse"
+loop_mode = 2
+
 [sub_resource type="Animation" id="Animation_gs10s"]
 length = 0.001
 tracks/0/type = "value"
@@ -1069,10 +1073,6 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_iecfd"]
-resource_name = "Glow_col_pulse"
-loop_mode = 2
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
 _data = {
 &"CrouchWalk_left": SubResource("Animation_dk22a"),
@@ -1165,7 +1165,6 @@ texture = ExtResource("1_qxrn5")
 
 [node name="Glow_Light" parent="." instance=ExtResource("2_l524k")]
 position = Vector2(219, 171)
-scale = Vector2(7.16, 7.16)
 
 [node name="player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(220, 171)

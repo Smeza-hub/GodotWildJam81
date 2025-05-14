@@ -27,6 +27,7 @@ func _ready():
 	enemy_search_state.search_succeeded.connect(fsm.change_state.bind(enemy_chase_state))
 	
 	enemy_attack_state.player_out_of_range.connect(fsm.change_state.bind(enemy_chase_state))
+	print_tree_pretty()
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 

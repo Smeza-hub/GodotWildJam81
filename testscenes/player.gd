@@ -24,6 +24,9 @@ var speed: float = BASE_SPEED
 var acceleration: float = BASE_ACCELERATION
 var potions_in_inventory = []
 var party_value:float
+var direction := Vector2.ZERO
+var is_confused = false
+var confused_dir: Dictionary = {}
 
 func _ready():
 	Global.player = self
@@ -31,7 +34,16 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	var idle = !velocity
-	var direction = Input.get_vector("left","right","up","down")
+	
+	if !is_confused:
+		direction = Input.get_vector("left","right","up","down")
+	elif is_confused:
+		direction = Input.get_vector(
+			confused_dir["left"],
+			confused_dir["right"],
+			confused_dir["up"],
+			confused_dir["down"]
+		)
 	if !idle:
 		last_facing_direction = velocity.normalized()
 	
