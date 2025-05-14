@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://ddos4fllxhx5u"]
+[gd_scene load_steps=138 format=3 uid="uid://ddos4fllxhx5u"]
 
 [ext_resource type="Script" uid="uid://c7n5j1fp0m4uw" path="res://testscenes/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://chayd0pft8hvl" path="res://Assets/Test Assets/Kobold/koboldwalk2.png" id="2_0e48y"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ce6cbgnseo2xw" path="res://Assets/Test Assets/Kobold/CrouchWalkFront-0.png" id="4_0ct7i"]
 [ext_resource type="Texture2D" uid="uid://5mnvcnya2o0u" path="res://Assets/Test Assets/Kobold/CrouchWalkSide_left.png" id="5_a0fax"]
 [ext_resource type="Texture2D" uid="uid://bvmpw0paqhbgv" path="res://Assets/Test Assets/Kobold/CrouchWalkBack-0.png" id="6_a0fax"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
-radius = 73.154
+[ext_resource type="Texture2D" uid="uid://drnp1jkphujcq" path="res://Assets/Test Assets/Kobold/newkobold/front_walk.png" id="6_eftn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_0e48y")
@@ -795,7 +793,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_0ct7i")]
+"values": [ExtResource("6_eftn4")]
 }
 
 [sub_resource type="Animation" id="Animation_iecfd"]
@@ -1150,19 +1148,23 @@ states/Start/position = Vector2(142, 120)
 transitions = ["Start", "Crouch", SubResource("AnimationNodeStateMachineTransition_0s5e8"), "Crouch", "Idle", SubResource("AnimationNodeStateMachineTransition_jb5ke"), "Idle", "Crouch", SubResource("AnimationNodeStateMachineTransition_t8eg7")]
 graph_offset = Vector2(-111, 16)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sduiw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_eftn4"]
 radius = 73.0274
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjg0x"]
+radius = 73.154
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e7qq7"]
+radius = 73.154
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0e48y"]
+radius = 47.3672
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 17
-collision_mask = 19
+collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_0e48y")
-
-[node name="Collision" type="CollisionShape2D" parent="."]
-scale = Vector2(1.08, 1.08)
-shape = SubResource("CircleShape2D_0e48y")
-debug_color = Color(0, 0.6, 0.701961, 0.666667)
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1172,6 +1174,7 @@ animation = &"walk0"
 autoplay = "walk180"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(1.08, 1.08)
 texture = ExtResource("4_0ct7i")
 flip_h = true
@@ -1195,28 +1198,37 @@ parameters/Crouch/blend_position = Vector2(-0.0614525, -0.524664)
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="interactablearea" type="Area2D" parent="."]
+visible = false
 scale = Vector2(1.08, 1.08)
 collision_mask = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactablearea"]
-shape = SubResource("CircleShape2D_sduiw")
+shape = SubResource("CircleShape2D_eftn4")
 debug_color = Color(0.301266, 0.628117, 0, 0.42)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["player"]]
+visible = false
 collision_mask = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="Hitbox"]
 scale = Vector2(1.08, 1.08)
-shape = SubResource("CircleShape2D_0e48y")
+shape = SubResource("CircleShape2D_vjg0x")
 debug_color = Color(0, 0.6, 0.701961, 0.666667)
 
 [node name="VisionHitbox" type="Area2D" parent="." groups=["player_light"]]
+visible = false
 collision_mask = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="VisionHitbox"]
 scale = Vector2(1.08, 1.08)
-shape = SubResource("CircleShape2D_0e48y")
+shape = SubResource("CircleShape2D_e7qq7")
 debug_color = Color(0.656215, 0.517062, 5.77569e-07, 0.666667)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1.52588e-05, -2)
+scale = Vector2(1.08, 1.08)
+shape = SubResource("CircleShape2D_0e48y")
+debug_color = Color(0, 0.6, 0.701961, 0.666667)
 
 [connection signal="area_entered" from="interactablearea" to="." method="_on_interactablearea_area_entered"]
 [connection signal="area_exited" from="interactablearea" to="." method="_on_interactablearea_area_exited"]

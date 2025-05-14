@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d08h47pbmf7kd"]
+[gd_scene load_steps=11 format=3 uid="uid://d08h47pbmf7kd"]
 
 [ext_resource type="Texture2D" uid="uid://b25lo5bgcepso" path="res://Assets/Test Assets/TopDownTileset.png" id="1_pl5sy"]
 [ext_resource type="PackedScene" uid="uid://ddos4fllxhx5u" path="res://testscenes/Player.tscn" id="1_uhqqe"]
@@ -776,6 +776,11 @@ sources/0 = SubResource("TileSetAtlasSource_q6aya")
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ia1lp"]
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_15if4"]
+vertices = PackedVector2Array(-363.922, 468.578, 291.922, 436.578, 596.078, 436.578, 531.078, 1032, 226.922, 1032, -248.602, 1899.63, -60.9219, 1220.58, 226.922, 1170.58, 531.078, 1170.58, 1223.87, 1653.55, 596.078, 298, 1199.09, -27.4688, 0.71875, -562.609, 291.922, 298, -365.078, 1220.58, -1967.33, 1103.31, -1720.08, 1107.58, -565.922, 1119.58, -565.922, 981, -365.078, 1082, -60.9219, 1082, -668.078, 468.578, -870.078, 981, -1415.92, 969, -363.922, 330, -925.992, -396.563, -668.078, 330, -1352.21, -90.2734, -1720.08, 969, -870.078, 1119.58, -1415.92, 1107.58)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8, 9), PackedInt32Array(2, 10, 11, 9), PackedInt32Array(12, 11, 10, 13), PackedInt32Array(2, 9, 8, 3), PackedInt32Array(14, 6, 5), PackedInt32Array(14, 5, 15, 16), PackedInt32Array(17, 18, 19, 14), PackedInt32Array(7, 6, 20, 4), PackedInt32Array(0, 4, 20, 19, 18, 21), PackedInt32Array(21, 18, 22, 23), PackedInt32Array(13, 1, 0, 24, 12), PackedInt32Array(25, 12, 24, 26, 27), PackedInt32Array(15, 27, 26, 28), PackedInt32Array(22, 29, 30, 23), PackedInt32Array(26, 21, 23, 28), PackedInt32Array(15, 28, 16), PackedInt32Array(14, 16, 30, 29), PackedInt32Array(14, 29, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1360, -97, -930, -406, 2, -573, 1209, -34, 1234, 1662, -250, 1910, -1981, 1108)])
+
 [node name="TestScene" type="Node"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -811,5 +816,23 @@ position = Vector2(115, 636)
 visible = false
 color = Color(0.169245, 0.169245, 0.169245, 1)
 
-[node name="Tent2" parent="." instance=ExtResource("2_tmf7p")]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_15if4")
+
+[node name="Tent2" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
 position = Vector2(-1569, 995)
+
+[node name="Tent3" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
+position = Vector2(-719, 1007)
+
+[node name="Tent4" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
+position = Vector2(-517, 356)
+
+[node name="Tent5" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
+position = Vector2(-214, 1108)
+
+[node name="Tent6" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
+position = Vector2(378, 1058)
+
+[node name="Tent7" parent="NavigationRegion2D" instance=ExtResource("2_tmf7p")]
+position = Vector2(443, 324)

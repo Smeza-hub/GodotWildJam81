@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 func _on_found_player(body):
 	if !body.is_in_group("player_light"):
 		return
-	if !vision_cast.get_collider().is_in_group("player"):
-		return
-	emit_signal("found_player")
+	var collider = vision_cast.get_collider()
+	if collider and collider.is_in_group("player"):
+		emit_signal("found_player")
 	

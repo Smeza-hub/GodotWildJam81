@@ -41,7 +41,6 @@ var potion_slot_3 = null
 var can_drink = true
 var is_swaying = false
 func _ready() -> void:
-	self.grab_focus()
 	update_slots()
 	turn_off_shader(potion_slot_1_sprite)
 	

@@ -3,22 +3,34 @@ class_name EnemyAttackState
 
 @export var actor: Enemy
 @export var animator: AnimatedSprite2D
-
+@export var attack_timer: Timer
+@onready var can_attack:bool = false
 signal player_out_of_range
 
 func _ready() -> void:
+	attack_timer.connect("timeout",_on_timeout)
 	set_physics_process(false)
 	
 	
 func _enter_state()->void:
 	actor.velocity = Vector2.ZERO
-	actor.attack()
+	attack()
 	animator.play("attack")
-	await get_tree().create_timer(0.2).timeout
 	set_physics_process(true)
 func _exit_state()->void:
 	set_physics_process(false)
 	
 func _physics_process(delta: float) -> void:
-	if !actor.target.hitbox.overlaps_area(actor.hurt_box):
-		player_out_of_range.emit()
+	print(attack_timer.time_left)
+
+
+func attack():
+	actor.attack()
+	animator.play("attack")
+	can_attack = false
+	attack_timer.start(actor.attack_cooldown)
+
+
+func _on_timeout():
+	emit_signal("player_out_of_range")
+	

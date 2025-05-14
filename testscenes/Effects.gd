@@ -2,7 +2,7 @@ extends Node
 class_name PotionEffects
 
 static var glow_light = preload("res://testscenes/glow_light.tscn")
-
+static var smoke_particle = preload("res://smoke_particle.tscn")
 # Key is potion effect name. value is [tooltip, function]
 static var positive_effects = {
 	"health_rapid_mend":["heal instantly",Callable(PotionEffects,"health_rapid_mend")],

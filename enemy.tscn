@@ -8,10 +8,6 @@
 [ext_resource type="Script" uid="uid://ctn1tu4cngd5l" path="res://scripts/enemy_search_state.gd" id="6_3yqyl"]
 [ext_resource type="Script" uid="uid://c0binlewbnygm" path="res://scripts/enemy_attack_state.gd" id="7_wujgv"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
-radius = 14.0
-height = 85.05
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
 radius = 99.0202
 
@@ -159,6 +155,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wujgv"]
+radius = 23.6636
+
 [sub_resource type="Animation" id="Animation_hb8ge"]
 resource_name = "ConeSweep"
 length = 8.0
@@ -199,13 +198,9 @@ _data = {
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 17
+collision_mask = 16
+safe_margin = 0.25
 script = ExtResource("1_7k104")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 46)
-scale = Vector2(1.48148, 1.48148)
-shape = SubResource("CapsuleShape2D_qi2p4")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 scale = Vector2(6.4, 6.4)
@@ -234,11 +229,17 @@ rotation = 0.785398
 shape = SubResource("ConvexPolygonShape2D_3yqyl")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(6.4, 6.4)
 sprite_frames = SubResource("SpriteFrames_n0g06")
 animation = &"attack"
 frame = 7
 frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 51)
+scale = Vector2(1.48148, 1.48148)
+shape = SubResource("CircleShape2D_wujgv")
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("2_4gyqm")
@@ -271,10 +272,11 @@ animator = NodePath("../../AnimatedSprite")
 vision_cast = NodePath("../../RayCast2D")
 metadata/_custom_type_script = "uid://ctn1tu4cngd5l"
 
-[node name="EnemyAttackState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator")]
+[node name="EnemyAttackState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "attack_timer")]
 script = ExtResource("7_wujgv")
 actor = NodePath("../..")
 animator = NodePath("../../AnimatedSprite")
+attack_timer = NodePath("../../AttackTimer")
 metadata/_custom_type_script = "uid://c0binlewbnygm"
 
 [node name="ChaseEndTimer" type="Timer" parent="."]
@@ -286,3 +288,9 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
