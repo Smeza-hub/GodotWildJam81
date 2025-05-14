@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://ddos4fllxhx5u"]
+[gd_scene load_steps=137 format=3 uid="uid://ddos4fllxhx5u"]
 
 [ext_resource type="Script" uid="uid://c7n5j1fp0m4uw" path="res://testscenes/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://chayd0pft8hvl" path="res://Assets/Test Assets/Kobold/koboldwalk2.png" id="2_0e48y"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ce6cbgnseo2xw" path="res://Assets/Test Assets/Kobold/CrouchWalkFront-0.png" id="4_0ct7i"]
 [ext_resource type="Texture2D" uid="uid://5mnvcnya2o0u" path="res://Assets/Test Assets/Kobold/CrouchWalkSide_left.png" id="5_a0fax"]
 [ext_resource type="Texture2D" uid="uid://bvmpw0paqhbgv" path="res://Assets/Test Assets/Kobold/CrouchWalkBack-0.png" id="6_a0fax"]
-[ext_resource type="Texture2D" uid="uid://drnp1jkphujcq" path="res://Assets/Test Assets/Kobold/newkobold/front_walk.png" id="6_eftn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
 atlas = ExtResource("2_0e48y")
@@ -793,7 +792,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_eftn4")]
+"values": [ExtResource("4_0ct7i")]
 }
 
 [sub_resource type="Animation" id="Animation_iecfd"]
@@ -1198,7 +1197,6 @@ parameters/Crouch/blend_position = Vector2(-0.0614525, -0.524664)
 parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="interactablearea" type="Area2D" parent="."]
-visible = false
 scale = Vector2(1.08, 1.08)
 collision_mask = 48
 
@@ -1207,7 +1205,6 @@ shape = SubResource("CircleShape2D_eftn4")
 debug_color = Color(0.301266, 0.628117, 0, 0.42)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["player"]]
-visible = false
 collision_mask = 2
 
 [node name="HitBoxCollision" type="CollisionShape2D" parent="Hitbox"]
@@ -1225,7 +1222,7 @@ shape = SubResource("CircleShape2D_e7qq7")
 debug_color = Color(0.656215, 0.517062, 5.77569e-07, 0.666667)
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(1.52588e-05, -2)
+position = Vector2(-0.999985, -1)
 scale = Vector2(1.08, 1.08)
 shape = SubResource("CircleShape2D_0e48y")
 debug_color = Color(0, 0.6, 0.701961, 0.666667)

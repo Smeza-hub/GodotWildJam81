@@ -20,8 +20,8 @@ var Max_health: float = BASE_HEALTH
 var health: float = BASE_HEALTH
 var max_tolerance: float = BASE_TOLERANCE
 var tolerance:float = 0
-var speed: float = BASE_SPEED
-var acceleration: float = BASE_ACCELERATION
+@export var speed: float = BASE_SPEED
+@export var acceleration: float = BASE_ACCELERATION
 var potions_in_inventory = []
 var party_value:float
 var direction := Vector2.ZERO
@@ -29,7 +29,7 @@ var direction := Vector2.ZERO
 var is_confused = false
 var confused_dir: Dictionary = {}
 
-var is_teleport_movement = true
+var is_teleport_movement = false
 var teleport_distance := 200.0
 var last_input_direction := Vector2.ZERO
 
