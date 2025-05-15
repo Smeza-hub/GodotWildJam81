@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cbhu842nwd86g" path="res://icon.svg" id="1_0e0tg"]
 [ext_resource type="Script" uid="uid://p0vwyjykqjey" path="res://testscenes/inventory.gd" id="1_w1p51"]
-[ext_resource type="Texture2D" uid="uid://dnou1jyvy5wga" path="res://Assets/Test Assets/0008.png" id="3_41adk"]
-[ext_resource type="Shader" uid="uid://dkdy0ixt6o8px" path="res://Assets/Test Assets/Shaders/outline2D_outer.gdshader" id="4_6jepy"]
-[ext_resource type="Shader" uid="uid://dihcgihwc4sqh" path="res://Assets/Test Assets/Shaders/outline2D_inner_outer.gdshader" id="4_fbohy"]
-[ext_resource type="Texture2D" uid="uid://wdcif44sqn0u" path="res://Assets/Test Assets/potion/potion2.png" id="4_i7wqe"]
+[ext_resource type="Texture2D" uid="uid://dnou1jyvy5wga" path="res://Assets/Game Assets/0008.png" id="3_41adk"]
+[ext_resource type="Shader" uid="uid://dkdy0ixt6o8px" path="res://Assets/Game Assets/Shaders/outline2D_outer.gdshader" id="4_6jepy"]
+[ext_resource type="Shader" uid="uid://dihcgihwc4sqh" path="res://Assets/Game Assets/Shaders/outline2D_inner_outer.gdshader" id="4_fbohy"]
+[ext_resource type="Texture2D" uid="uid://wdcif44sqn0u" path="res://Assets/Game Assets/potion/potion2.png" id="4_i7wqe"]
 
 [sub_resource type="Image" id="Image_0e0tg"]
 data = {

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d08h47pbmf7kd"]
+[gd_scene load_steps=6 format=3 uid="uid://d08h47pbmf7kd"]
 
 [ext_resource type="PackedScene" uid="uid://csl8a28gw2pv8" path="res://scenes/overlaid_menus/pause_menu.tscn" id="2_wqo75"]
 [ext_resource type="Script" uid="uid://bbymrin0cm704" path="res://addons/maaacks_game_template/extras/scripts/level_loader.gd" id="3_pl5sy"]
 [ext_resource type="Script" uid="uid://yakisxcmflgk" path="res://addons/maaacks_game_template/extras/scripts/level_list_manager.gd" id="4_q6aya"]
+[ext_resource type="Script" uid="uid://crbo2e4ndbyvk" path="res://addons/maaacks_game_template/extras/scripts/level_list_loader.gd" id="5_q6aya"]
 [ext_resource type="Script" uid="uid://cyh0d64pfygbl" path="res://addons/maaacks_game_template/base/scripts/pause_menu_controller.gd" id="7_t5udj"]
 
 [node name="TestScene" type="Node"]
@@ -16,6 +17,7 @@ metadata/_custom_type_script = "uid://cyh0d64pfygbl"
 [node name="LevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
 script = ExtResource("3_pl5sy")
 level_container = NodePath("../Node")
+auto_load = true
 metadata/_custom_type_script = "uid://bbymrin0cm704"
 
 [node name="LevelListManager" type="Node" parent="."]
@@ -24,3 +26,8 @@ main_menu_scene = "uid://dpyg55pn1fot5"
 metadata/_custom_type_script = "uid://yakisxcmflgk"
 
 [node name="Node" type="Node" parent="."]
+
+[node name="LevelListLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
+script = ExtResource("5_q6aya")
+level_container = NodePath("../Node")
+metadata/_custom_type_script = "uid://crbo2e4ndbyvk"

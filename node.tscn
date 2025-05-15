@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://uk6girnhmyb4"]
 
-[ext_resource type="Texture2D" uid="uid://cg6saxnlpxho8" path="res://Assets/Test Assets/potion/health_potion-0.png" id="1_j2q8x"]
-[ext_resource type="Texture2D" uid="uid://dgiy5voartyuv" path="res://Assets/Test Assets/potion/empty_vial.png" id="2_112p8"]
+[ext_resource type="Texture2D" uid="uid://cg6saxnlpxho8" path="res://Assets/Game Assets/potion/health_potion-0.png" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://dgiy5voartyuv" path="res://Assets/Game Assets/potion/empty_vial.png" id="2_112p8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2u21"]
 atlas = ExtResource("1_j2q8x")

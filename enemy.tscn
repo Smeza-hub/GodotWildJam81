@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dv4m3xhxygh32" path="res://enemy.gd" id="1_7k104"]
 [ext_resource type="Script" uid="uid://dao1d76pw5qnl" path="res://scripts/finitestatemachine.gd" id="2_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://b4ripli8pf1fc" path="res://Assets/Test Assets/Soldiers_1.png" id="2_iifgy"]
+[ext_resource type="Texture2D" uid="uid://b4ripli8pf1fc" path="res://Assets/Game Assets/Soldiers_1.png" id="2_iifgy"]
 [ext_resource type="Script" uid="uid://d25o8ulj30yve" path="res://scripts/enemy_idle_state.gd" id="3_qi2p4"]
 [ext_resource type="Script" uid="uid://5him1hkhtjq6" path="res://scripts/enemy_chase_state.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://ctn1tu4cngd5l" path="res://scripts/enemy_search_state.gd" id="6_3yqyl"]
