@@ -1,8 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://ddos4fllxhx5u"]
+[gd_scene load_steps=51 format=3 uid="uid://ddos4fllxhx5u"]
 
 [ext_resource type="Script" uid="uid://c7n5j1fp0m4uw" path="res://testscenes/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://dp42xsjgcja4d" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_0-0.png" id="3_e3isr"]
-[ext_resource type="Texture2D" uid="uid://cgwx5yx5cbssg" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/idle_kobold_0.png" id="4_dip6k"]
+[ext_resource type="Texture2D" uid="uid://casiwqhyj8h1k" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/idle_kobold_0-0.png" id="7_e3isr"]
 [ext_resource type="Texture2D" uid="uid://cbg8faetxhqx3" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/90_walk.png" id="7_eftn4"]
 [ext_resource type="Texture2D" uid="uid://be1vl3hod4vbu" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/270_walk.png" id="8_vjg0x"]
 [ext_resource type="Texture2D" uid="uid://unm0xtdx4l8x" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/0_walk.png" id="9_e7qq7"]
@@ -51,9 +51,40 @@ tracks/2/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_70qsr"]
+resource_name = "idle_back"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dip6k"]
+
 [sub_resource type="CanvasTexture" id="CanvasTexture_nplo3"]
 diffuse_texture = ExtResource("3_e3isr")
-normal_texture = ExtResource("4_dip6k")
+normal_texture = SubResource("CompressedTexture2D_dip6k")
 
 [sub_resource type="Animation" id="Animation_e3isr"]
 resource_name = "idle_front"
@@ -219,6 +250,10 @@ tracks/2/keys = {
 "values": [32]
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_70qsr"]
+diffuse_texture = ExtResource("9_e7qq7")
+normal_texture = ExtResource("7_e3isr")
+
 [sub_resource type="Animation" id="Animation_x3b8j"]
 resource_name = "walk_front"
 length = 1.06667
@@ -245,7 +280,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_e7qq7")]
+"values": [SubResource("CanvasTexture_70qsr")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -425,35 +460,6 @@ tracks/2/keys = {
 "values": [32]
 }
 
-[sub_resource type="Animation" id="Animation_70qsr"]
-resource_name = "idle_back"
-length = 1.06667
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [32]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.06667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 31]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
 _data = {
 &"RESET": SubResource("Animation_gs10s"),
@@ -574,10 +580,9 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_nbrll")
 width = 512
 height = 512
-use_hdr = true
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0.0811966)
+fill_to = Vector2(0.5, 0)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 17
@@ -633,6 +638,13 @@ scale = Vector2(1.08, 1.08)
 shape = SubResource("CircleShape2D_0e48y")
 debug_color = Color(0, 0.6, 0.701961, 0.666667)
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(-79, -104)
+scale = Vector2(1.01, 1.01)
+texture = SubResource("GradientTexture2D_orc17")
+height = 106.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 scale = Vector2(0.25, 0.25)
@@ -643,15 +655,9 @@ hframes = 32
 scale = Vector2(4.28, 4.28)
 target_position = Vector2(50, 0)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(166, 14)
-rotation = -1.58128
-scale = Vector2(3.51951, 3.51951)
-energy = 1.88
-texture = SubResource("GradientTexture2D_orc17")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.31802, 0.31802, 0.31802, 1)
+visible = false
+color = Color(0.111197, 0.111197, 0.111197, 1)
 
 [connection signal="area_entered" from="interactablearea" to="." method="_on_interactablearea_area_entered"]
 [connection signal="area_exited" from="interactablearea" to="." method="_on_interactablearea_area_exited"]

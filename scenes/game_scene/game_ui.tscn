@@ -18,8 +18,8 @@ grow_vertical = 2
 
 [node name="LevelLoader" type="Node" parent="." node_paths=PackedStringArray("level_container")]
 script = ExtResource("3_bmy5n")
-level_container = NodePath("../Node")
-files = Array[String](["res://scenes/game_scene/levels/1_test_scene_container.tscn"])
+level_container = NodePath("../SubViewportContainer/SubViewport")
+files = Array[String](["res://scenes/game_scene/levels/1_test_scene_container.tscn", "res://scenes/game_scene/levels/2_test_scene_container.tscn", "res://scenes/game_scene/levels/3_test_scene_container.tscn", "res://scenes/game_scene/levels/level_1.tscn"])
 directory = "res://scenes/game_scene/levels"
 
 [node name="BackgroundMusicPlayer" parent="." instance=ExtResource("4_7aihr")]
@@ -39,3 +39,17 @@ level_lost_scene = ExtResource("9_i7m4m")
 level_won_scene = ExtResource("10_rkfhe")
 
 [node name="Node" type="Node" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
