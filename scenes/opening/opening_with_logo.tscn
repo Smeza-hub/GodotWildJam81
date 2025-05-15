@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://sikc02ddepyt" path="res://addons/maaacks_game_template/base/scenes/opening/opening.tscn" id="1_w60c0"]
 [ext_resource type="Script" uid="uid://c1s3401qnm0d2" path="res://scenes/opening/opening.gd" id="2_ynkyy"]
-[ext_resource type="Texture2D" uid="uid://c6wf3acuxl6rq" path="res://assets/images/GWJ-Full-Logo-tag-Orange2.svg" id="3_kt5v3"]
-[ext_resource type="Texture2D" uid="uid://c35ypv2anfnpy" path="res://assets/images/ThemeBanner.png" id="4_u58oj"]
-[ext_resource type="Texture2D" uid="uid://cvpp2xavwpvoa" path="res://assets/images/WildcardsBanner.png" id="5_qie0p"]
+[ext_resource type="Texture2D" uid="uid://c6wf3acuxl6rq" path="res://Assets/images/GWJ-Full-Logo-tag-Orange2.svg" id="3_kt5v3"]
+[ext_resource type="Texture2D" uid="uid://c35ypv2anfnpy" path="res://Assets/images/ThemeBanner.png" id="4_u58oj"]
+[ext_resource type="Texture2D" uid="uid://cvpp2xavwpvoa" path="res://Assets/images/WildcardsBanner.png" id="5_qie0p"]
 
 [node name="Opening" instance=ExtResource("1_w60c0")]
 script = ExtResource("2_ynkyy")

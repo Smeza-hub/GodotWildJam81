@@ -24,6 +24,10 @@ ProjectUISoundController="*res://addons/maaacks_game_template/base/scenes/autolo
 Global="*res://scripts/global.gd"
 Effect="*res://testscenes/Effects.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/maaacks_game_template/plugin.cfg")

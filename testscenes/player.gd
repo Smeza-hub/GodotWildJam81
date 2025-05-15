@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-const BASE_SPEED: float = 500.0
-const BASE_ACCELERATION: float = BASE_SPEED *4
+@export var BASE_SPEED: float = 500.0
+@export var BASE_ACCELERATION: float = 2000
 const BASE_HEALTH: float = 100
 const BASE_SCALE: = Vector2(1.08, 1.08)
 const BASE_TOLERANCE:float = 100
@@ -14,17 +14,20 @@ const BASE_TOLERANCE:float = 100
 @onready var collision: CollisionShape2D = $Collision
 @onready var vision_hitbox: Area2D = $VisionHitbox
 
+@onready var intended_dir: RayCast2D = $Intended_dir
 
 var last_facing_direction := Vector2(0,-1)
 var Max_health: float = BASE_HEALTH
 var health: float = BASE_HEALTH
 var max_tolerance: float = BASE_TOLERANCE
 var tolerance:float = 0
-@export var speed: float = BASE_SPEED
-@export var acceleration: float = BASE_ACCELERATION
+var speed: float = BASE_SPEED
+var acceleration: float = BASE_ACCELERATION
 var potions_in_inventory = []
 var party_value:float
+
 var direction := Vector2.ZERO
+var facing_angle: float = 0.0
 
 var is_confused = false
 var confused_dir: Dictionary = {}
@@ -39,35 +42,40 @@ var smoke_particle = preload("res://smoke_particle.tscn")
 
 func _ready():
 	Global.player = self
+	speed = BASE_SPEED
+	acceleration= BASE_ACCELERATION
 	set_process_input(true)
 
 func _physics_process(delta: float) -> void:
-	
+	var input_vector = Vector2.ZERO
 	if is_teleport_movement:
 		handle_teleport_movement()
 		return
 	var idle = !velocity
 	if !is_confused:
-		direction = Input.get_vector("left","right","up","down")
+		input_vector = Input.get_vector("left","right","up","down")
 	elif is_confused:
-		direction = Input.get_vector(
+		input_vector = Input.get_vector(
 			confused_dir["left"],
 			confused_dir["right"],
 			confused_dir["up"],
 			confused_dir["down"]
 		)
-	if !idle:
+	if input_vector.length() >0.1:
+		var target_angle = input_vector.angle()
+		facing_angle = lerp_angle(facing_angle,target_angle,10.0*delta)
 		last_facing_direction = velocity.normalized()
 	
 	
-	animation_tree.set("parameters/Idle/blend_position",last_facing_direction)
+	animation_tree.set("parameters/Walk/blend_position",last_facing_direction)
 	animation_tree.set("parameters/Crouch/blend_position",last_facing_direction)
-	velocity = velocity.move_toward(direction * speed ,acceleration * delta) 
+	var target_velocity = input_vector * speed
+	velocity = velocity.move_toward(target_velocity ,acceleration * delta) 
 	
 	#if direction == Vector2.ZERO:
 		#velocity = velocity.move_toward(Vector2.ZERO,5*delta)
 		
-	
+	intended_dir.target_position = Vector2.RIGHT.rotated(facing_angle) * 100
 	move_and_slide()
 
 func _interact(area):
