@@ -15,6 +15,7 @@ const MUTE_SETTING = &'Mute'
 const MASTER_BUS_INDEX = 0
 const SYSTEM_BUS_NAME_PREFIX = "_"
 
+#region Input
 # Input
 static var default_action_events : Dictionary
 static var initial_bus_volumes : Array
@@ -79,7 +80,9 @@ static func set_inputs_from_config() -> void:
 	var action_list : Array[StringName] = _get_action_names()
 	for action_name in action_list:
 		set_input_from_config(action_name)
+#endregion
 
+#region Audio
 # Audio
 
 static func get_bus_volume(bus_index : int) -> float:
@@ -119,6 +122,8 @@ static func set_audio_from_config() -> void:
 	var mute_audio_flag : bool = is_muted()
 	mute_audio_flag = Config.get_config(AUDIO_SECTION, MUTE_SETTING, mute_audio_flag)
 	set_mute(mute_audio_flag)
+#endregion
+#region Video
 
 # Video
 
@@ -163,6 +168,7 @@ static func get_vsync(window : Window = null) -> DisplayServer.VSyncMode:
 		window_id = window.get_window_id()
 	var vsync_mode = DisplayServer.window_get_vsync_mode(window_id)
 	return vsync_mode
+#endregion
 
 # All
 

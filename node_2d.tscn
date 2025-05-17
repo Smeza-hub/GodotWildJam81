@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://nonxywa7eod5"]
 
-[ext_resource type="Texture2D" uid="uid://b00i78gpegd2s" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/180_walk.png" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://b00i78gpegd2s" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/180_walk.png" id="1_wtcfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
 atlas = ExtResource("1_wtcfe")

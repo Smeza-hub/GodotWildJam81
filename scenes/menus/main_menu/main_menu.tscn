@@ -7,12 +7,6 @@
 
 [node name="MainMenu" instance=ExtResource("1_peecx")]
 script = ExtResource("2_ub2bi")
-game_scene_path = "res://scenes/game_scene/game_ui.tscn"
+game_scene_path = "uid://vierwf7fhnwq"
 options_packed_scene = ExtResource("3_x31ro")
 credits_packed_scene = ExtResource("4_0jpat")
-
-[node name="BackgroundMusicPlayer" parent="." index="1"]
-bus = &"Master"
-
-[node name="TitleLabel" parent="MenuContainer/TitleMargin/TitleContainer" index="0"]
-text = "GodotWildjam81"

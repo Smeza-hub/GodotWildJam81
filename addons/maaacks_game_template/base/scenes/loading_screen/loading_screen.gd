@@ -15,6 +15,7 @@ enum StallStage{STARTED, WAITING, STILL_WAITING, GIVE_UP}
 @export var _complete : String = "Loading Complete!"
 @export var _complete_waiting : String = "Any Moment Now..."
 @export var _complete_still_waiting : String = "Any Moment Now... (%d seconds)"
+@onready var progress_tween: Tween
 
 var _stall_stage : StallStage = StallStage.STARTED
 var _scene_loading_complete : bool = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://csb5t1gqjx57l"]
+[gd_scene load_steps=95 format=4 uid="uid://csb5t1gqjx57l"]
 
 [ext_resource type="Texture2D" uid="uid://cbhu842nwd86g" path="res://icon.svg" id="1_0e0tg"]
 [ext_resource type="Script" uid="uid://p0vwyjykqjey" path="res://testscenes/inventory.gd" id="1_w1p51"]
@@ -6,6 +6,17 @@
 [ext_resource type="Shader" uid="uid://dkdy0ixt6o8px" path="res://Assets/Game Assets/Shaders/outline2D_outer.gdshader" id="4_6jepy"]
 [ext_resource type="Shader" uid="uid://dihcgihwc4sqh" path="res://Assets/Game Assets/Shaders/outline2D_inner_outer.gdshader" id="4_fbohy"]
 [ext_resource type="Texture2D" uid="uid://wdcif44sqn0u" path="res://Assets/Game Assets/potion/potion2.png" id="4_i7wqe"]
+[ext_resource type="Texture2D" uid="uid://cv8n6r0ap8o1b" path="res://Assets/Game Assets/potion/BELTNOSHADOW.png" id="4_kjmjn"]
+[ext_resource type="Texture2D" uid="uid://3b36g17k7d3c" path="res://Assets/Game Assets/Kobold/Portrait/Drinking Potion.png" id="7_bwe3b"]
+[ext_resource type="Texture2D" uid="uid://cjuw0hf2ie3o2" path="res://Assets/Game Assets/potion/Long boy/long_boy_potion_inner_red.png" id="7_h4ktt"]
+[ext_resource type="Texture2D" uid="uid://e856vat3ocw1" path="res://Assets/Game Assets/potion/Long boy/long_boy_potion.png" id="8_5uffc"]
+[ext_resource type="Shader" uid="uid://bg4oq0b68qjat" path="res://Assets/Game Assets/Shaders/wobbly.gdshader" id="8_bah1q"]
+[ext_resource type="Texture2D" uid="uid://b2yyprrg054fa" path="res://Assets/Game Assets/Kobold/Portrait/Portrait_Idle.png" id="8_man4t"]
+[ext_resource type="Texture2D" uid="uid://dojvnahietr2j" path="res://Assets/Game Assets/potion/Long boy/long_boy_potion_NOCAP.png" id="9_5uffc"]
+[ext_resource type="Texture2D" uid="uid://b1a80vw50phey" path="res://Assets/Game Assets/Kobold/Portrait/Taking Damage.png" id="10_5uffc"]
+[ext_resource type="Texture2D" uid="uid://dbw6c0g127ip" path="res://Assets/Game Assets/potion/Long boy/long_boy_potion_inner_yellow.png" id="10_dypgw"]
+[ext_resource type="Texture2D" uid="uid://fmdbn3niwa08" path="res://Assets/Game Assets/potion/1LOOP.png" id="12_is0fx"]
+[ext_resource type="Texture2D" uid="uid://mjju02ox4jf" path="res://Assets/Game Assets/Kobold/Portrait/Almost Final_Portrait_New Drunk.png" id="16_is0fx"]
 
 [sub_resource type="Image" id="Image_0e0tg"]
 data = {
@@ -2394,148 +2405,113 @@ shader = ExtResource("4_6jepy")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6jepy"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cy2og"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k81hs"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bah1q"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(768, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6mi7"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(1024, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bwe3b"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(1280, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_man4t"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(1536, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h4ktt"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(1792, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5uffc"]
-atlas = ExtResource("4_i7wqe")
-region = Rect2(2048, 0, 256, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dypgw"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(2304, 0, 256, 256)
+region = Rect2(146, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjmjn"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(2560, 0, 256, 256)
+region = Rect2(292, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_is0fx"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(2816, 0, 256, 256)
+region = Rect2(438, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at7ih"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(3072, 0, 256, 256)
+region = Rect2(584, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aicsm"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(3328, 0, 256, 256)
+region = Rect2(730, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ea8s"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(3584, 0, 256, 256)
+region = Rect2(876, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t8wh8"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(3840, 0, 256, 256)
+region = Rect2(1022, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys0xj"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(4096, 0, 256, 256)
+region = Rect2(1168, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dotye"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(4352, 0, 256, 256)
+region = Rect2(1314, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5gw6"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(4608, 0, 256, 256)
+region = Rect2(1460, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mxaja"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(4864, 0, 256, 256)
+region = Rect2(1606, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6x7fl"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(5120, 0, 256, 256)
+region = Rect2(1752, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qas5t"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(5376, 0, 256, 256)
+region = Rect2(1898, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqgii"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(5632, 0, 256, 256)
+region = Rect2(2044, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ah1dk"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(5888, 0, 256, 256)
+region = Rect2(2190, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqxgh"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(6144, 0, 256, 256)
+region = Rect2(2336, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrx10"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(6400, 0, 256, 256)
+region = Rect2(2482, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6opp8"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(6656, 0, 256, 256)
+region = Rect2(2628, 0, 146, 146)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2vhm"]
 atlas = ExtResource("4_i7wqe")
-region = Rect2(6912, 0, 256, 256)
+region = Rect2(2774, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgad5"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(2920, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uapp"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3066, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmhrk"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3212, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uatcc"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3358, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqhoc"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3504, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0oal"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3650, 0, 146, 146)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u824n"]
+atlas = ExtResource("4_i7wqe")
+region = Rect2(3796, 0, 146, 146)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_47k33"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6jepy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cy2og")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k81hs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bah1q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l6mi7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bwe3b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_man4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h4ktt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5uffc")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dypgw")
 }, {
@@ -2592,23 +2568,460 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2vhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgad5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uapp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmhrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uatcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqhoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0oal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u824n")
 }],
 "loop": true,
-"name": &"default",
-"speed": 15.0
+"name": &"new_animation",
+"speed": 30.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k81hs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cy2og"]
 shader = ExtResource("4_fbohy")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 3.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k81hs"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bah1q"]
 shader = ExtResource("4_fbohy")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/line_thickness = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7xdk"]
+atlas = ExtResource("7_h4ktt")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxvt3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7xdk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxvt3"]
+atlas = ExtResource("10_dypgw")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0xxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxvt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cy2og"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k81hs"]
+noise = SubResource("FastNoiseLite_cy2og")
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dypgw"]
+animation = &"Portrait Animations/Drink potion"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kjmjn"]
+animation = &"Portrait Animations/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_is0fx"]
+animation = &"Portrait Animations/Take Damage"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_at7ih"]
+animation = &"Portrait Animations/drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aicsm"]
+advance_mode = 2
+advance_expression = "!drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3ea8s"]
+advance_mode = 2
+advance_expression = "drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t8wh8"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "!drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ys0xj"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "!drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dotye"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k5gw6"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mxaja"]
+advance_mode = 2
+advance_expression = "drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6x7fl"]
+advance_mode = 2
+advance_expression = "!drunk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qas5t"]
+advance_mode = 2
+advance_expression = "took_damage"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jqgii"]
+advance_mode = 2
+advance_expression = "chugged"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ah1dk"]
+advance_mode = 2
+advance_expression = "chugged"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aqxgh"]
+advance_mode = 2
+advance_expression = "took_damage"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hrx10"]
+"states/Drink potion/node" = SubResource("AnimationNodeAnimation_dypgw")
+"states/Drink potion/position" = Vector2(746, 205)
+states/Idle/node = SubResource("AnimationNodeAnimation_kjmjn")
+states/Idle/position = Vector2(331, 40)
+states/Start/position = Vector2(194, 112)
+"states/Take Damage/node" = SubResource("AnimationNodeAnimation_is0fx")
+"states/Take Damage/position" = Vector2(720, 40)
+states/drunk/node = SubResource("AnimationNodeAnimation_at7ih")
+states/drunk/position = Vector2(338, 210)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_aicsm"), "Start", "drunk", SubResource("AnimationNodeStateMachineTransition_3ea8s"), "Take Damage", "Idle", SubResource("AnimationNodeStateMachineTransition_t8wh8"), "Drink potion", "Idle", SubResource("AnimationNodeStateMachineTransition_ys0xj"), "Take Damage", "drunk", SubResource("AnimationNodeStateMachineTransition_dotye"), "Drink potion", "drunk", SubResource("AnimationNodeStateMachineTransition_k5gw6"), "Idle", "drunk", SubResource("AnimationNodeStateMachineTransition_mxaja"), "drunk", "Idle", SubResource("AnimationNodeStateMachineTransition_6x7fl"), "Idle", "Take Damage", SubResource("AnimationNodeStateMachineTransition_qas5t"), "drunk", "Drink potion", SubResource("AnimationNodeStateMachineTransition_jqgii"), "Idle", "Drink potion", SubResource("AnimationNodeStateMachineTransition_ah1dk"), "drunk", "Take Damage", SubResource("AnimationNodeStateMachineTransition_aqxgh")]
+
+[sub_resource type="Animation" id="Animation_6opp8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PortraitSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_man4t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PortraitSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PortraitSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PortraitSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2vhm"]
+_data = {
+&"RESET": SubResource("Animation_6opp8")
+}
+
+[sub_resource type="Animation" id="Animation_47k33"]
+resource_name = "Drink potion"
+length = 0.833337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PortraitSprite:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PortraitSprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PortraitSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8, 48]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PortraitSprite:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_bwe3b")]
+}
+
+[sub_resource type="Animation" id="Animation_55wy7"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PortraitSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_man4t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PortraitSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PortraitSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PortraitSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 32]
+}
+
+[sub_resource type="Animation" id="Animation_aksll"]
+resource_name = "Take Damage"
+length = 0.533337
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PortraitSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_5uffc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PortraitSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PortraitSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PortraitSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10, 23]
+}
+
+[sub_resource type="Animation" id="Animation_5ulpw"]
+resource_name = "drunk"
+length = 0.800003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%PortraitSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_is0fx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%PortraitSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%PortraitSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%PortraitSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 31]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ncpdo"]
+_data = {
+&"Drink potion": SubResource("Animation_47k33"),
+&"Idle": SubResource("Animation_55wy7"),
+&"Take Damage": SubResource("Animation_aksll"),
+&"drunk": SubResource("Animation_5ulpw")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwe3b"]
+shader = ExtResource("8_bah1q")
+shader_parameter/refraction_stretch = Vector2(1, 1)
+shader_parameter/refraction_strength = 0.02
+shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
+shader_parameter/speed = 1.0
+
+[sub_resource type="Gradient" id="Gradient_man4t"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.498)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h4ktt"]
+gradient = SubResource("Gradient_man4t")
+width = 1920
+height = 1080
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5uffc"]
+frequency = 0.0063
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dypgw"]
+seamless = true
+noise = SubResource("FastNoiseLite_5uffc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6mi7"]
+shader = ExtResource("8_bah1q")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_dypgw")
+shader_parameter/refraction_stretch = Vector2(1, 1)
+shader_parameter/refraction_strength = 0.02
+shader_parameter/water_tint = Color(0.616, 0.481, 1, 0)
+shader_parameter/speed = 0.1
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -2720,21 +3133,33 @@ one_shot = true
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
 offset_top = 488.0
-offset_right = 237.0
-offset_bottom = 572.0
+offset_right = 681.0
+offset_bottom = 612.0
 scale = Vector2(1.88, 1.88)
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(237, 84)
+size = Vector2i(681, 124)
 render_target_update_mode = 4
 
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(-1.59574, 0)
+
+[node name="Beltnoshadow" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(94.6808, 59.5745)
+scale = Vector2(0.297873, 0.297873)
+texture = ExtResource("4_kjmjn")
+
+[node name="Beltnoshadow2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(586.17, 61.7021)
+scale = Vector2(0.297873, 0.297873)
+texture = ExtResource("4_kjmjn")
+flip_h = true
 
 [node name="Slot1" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D"]
-position = Vector2(-13.8298, -19.6809)
+position = Vector2(-13.8298, -2.65958)
 
 [node name="PotionSlot1Anchor" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D/Slot1"]
 position = Vector2(44, 30)
@@ -2743,7 +3168,7 @@ position = Vector2(44, 30)
 shape = SubResource("CircleShape2D_fbohy")
 
 [node name="PinJoint" type="PinJoint2D" parent="SubViewportContainer/SubViewport/Node2D/Slot1"]
-position = Vector2(44.1489, 25)
+position = Vector2(44.1489, 36.1702)
 node_a = NodePath("../PotionSlot1Anchor")
 node_b = NodePath("../PotionSlot1Body")
 
@@ -2754,21 +3179,23 @@ rotation = -0.532836
 collision_layer = 4
 collision_mask = 4
 
-[node name="PotionSlot1Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot1/PotionSlot1Body"]
-unique_name_in_owner = true
-texture_filter = 1
-material = SubResource("ShaderMaterial_6jepy")
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_47k33")
-autoplay = "default"
-frame_progress = 0.405123
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SubViewportContainer/SubViewport/Node2D/Slot1/PotionSlot1Body"]
 unique_name_in_owner = true
 polygon = PackedVector2Array(6.76019, -12.2171, 1.45005, -14.7311, -5.2933, -13.7677, -10.7444, -10.8072, -14.9031, -5.84949, -17.8754, -0.80957, -18.1807, 7.03815, -15.4904, 12.9474, -10.3447, 17.8345, -3.93025, 21.6173, 2.27271, 21.5703, 7.91174, 19.3381, 12.7989, 14.1924, 16.2057, 6.32123, 16.5111, -1.52646, 13.0924, -7.24774)
 
+[node name="PotionSlot1Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot1/PotionSlot1Body"]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_6jepy")
+position = Vector2(-1.72179, 0.0714467)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_47k33")
+animation = &"new_animation"
+frame = 9
+frame_progress = 0.583516
+
 [node name="Slot2" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D"]
-position = Vector2(-39.3617, -9.04255)
+position = Vector2(-46.8085, 22.8723)
 
 [node name="PotionSlot2Anchor" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D/Slot2"]
 position = Vector2(119, 31)
@@ -2777,7 +3204,7 @@ position = Vector2(119, 31)
 shape = SubResource("CircleShape2D_fbohy")
 
 [node name="PinJoint2" type="PinJoint2D" parent="SubViewportContainer/SubViewport/Node2D/Slot2"]
-position = Vector2(119.149, 26.0638)
+position = Vector2(119.149, 36.7021)
 node_a = NodePath("../PotionSlot2Anchor")
 node_b = NodePath("../PotionSlot2Body")
 
@@ -2789,22 +3216,22 @@ collision_layer = 4
 collision_mask = 4
 metadata/_edit_group_ = true
 
-[node name="PotionSlot2Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot2/PotionSlot2Body"]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_cy2og")
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_47k33")
-autoplay = "default"
-frame_progress = 0.137039
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="SubViewportContainer/SubViewport/Node2D/Slot2/PotionSlot2Body"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_k81hs")
 position = Vector2(-0.109516, 0.478802)
 polygon = PackedVector2Array(6.76019, -12.2171, 1.45005, -14.7311, -5.2933, -13.7677, -10.7444, -10.8072, -14.9031, -5.84949, -17.8754, -0.80957, -18.1807, 7.03815, -15.4904, 12.9474, -10.3447, 17.8345, -3.93025, 21.6173, 2.27271, 21.5703, 7.91174, 19.3381, 12.7989, 14.1924, 16.2057, 6.32123, 16.5111, -1.52646, 13.0924, -7.24774)
 
+[node name="PotionSlot2Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot2/PotionSlot2Body"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cy2og")
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_47k33")
+animation = &"new_animation"
+autoplay = "new_animation"
+
 [node name="Slot3" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D"]
-position = Vector2(-67.0213, 5.31915)
+position = Vector2(-78.7234, 51.0638)
 
 [node name="PotionSlot3Anchor" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D/Slot3"]
 position = Vector2(197, 31)
@@ -2813,7 +3240,7 @@ position = Vector2(197, 31)
 shape = SubResource("CircleShape2D_fbohy")
 
 [node name="PinJoint3" type="PinJoint2D" parent="SubViewportContainer/SubViewport/Node2D/Slot3"]
-position = Vector2(196.809, 25)
+position = Vector2(197.872, 37.766)
 node_a = NodePath("../PotionSlot3Anchor")
 node_b = NodePath("../PotionSlot3Body")
 
@@ -2824,18 +3251,208 @@ rotation = -0.532836
 collision_layer = 4
 collision_mask = 4
 
-[node name="PotionSlot3Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot3/PotionSlot3Body"]
-unique_name_in_owner = true
-material = SubResource("ShaderMaterial_bah1q")
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_47k33")
-autoplay = "default"
-frame_progress = 0.137039
-
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="SubViewportContainer/SubViewport/Node2D/Slot3/PotionSlot3Body"]
 unique_name_in_owner = true
 position = Vector2(0.513565, 0.846252)
 polygon = PackedVector2Array(6.76019, -12.2171, 1.45005, -14.7311, -5.2933, -13.7677, -10.7444, -10.8072, -14.9031, -5.84949, -17.8754, -0.80957, -18.1807, 7.03815, -15.4904, 12.9474, -10.3447, 17.8345, -3.93025, 21.6173, 2.27271, 21.5703, 7.91174, 19.3381, 12.7989, 14.1924, 16.2057, 6.32123, 16.5111, -1.52646, 13.0924, -7.24774)
+
+[node name="PotionSlot3Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Slot3/PotionSlot3Body"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bah1q")
+position = Vector2(0.0554677, 0.576134)
+scale = Vector2(0.335, 0.335)
+sprite_frames = SubResource("SpriteFrames_47k33")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.504779
+
+[node name="Health Vial" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(390.426, 35.1064)
+
+[node name="PotionSlot3Anchor" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial"]
+position = Vector2(197, 31)
+
+[node name="CollisionShape3D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial/PotionSlot3Anchor"]
+shape = SubResource("CircleShape2D_fbohy")
+
+[node name="PinJoint3" type="PinJoint2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial"]
+position = Vector2(196.808, 34.0426)
+node_a = NodePath("../PotionSlot3Anchor")
+node_b = NodePath("../HealthVialBody")
+
+[node name="HealthVialBody" type="RigidBody2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial"]
+position = Vector2(197, 49)
+rotation = -0.532836
+collision_layer = 4
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial/HealthVialBody"]
+position = Vector2(-1.29568, 2.86691)
+rotation = 0.539307
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_5uffc")
+
+[node name="Health Sprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial/HealthVialBody"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bah1q")
+position = Vector2(-16.3446, 27.3382)
+rotation = 0.539307
+scale = Vector2(0.081, 0.084)
+sprite_frames = SubResource("SpriteFrames_oxvt3")
+autoplay = "default"
+offset = Vector2(2.96582, -354.375)
+
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial/HealthVialBody"]
+position = Vector2(-1.29568, 2.86691)
+rotation = 0.539307
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("9_5uffc")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="SubViewportContainer/SubViewport/Node2D/Health Vial/HealthVialBody"]
+visible = false
+position = Vector2(0.513565, 0.846252)
+polygon = PackedVector2Array(6.76019, -12.2171, -0.305664, -16.2358, -23.2963, 19.6077, -23.5194, 26.2688, -16.2708, 31.7786, -10.4438, 30.2748, 13.0924, -7.24774)
+
+[node name="Withdrawal Vial" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(437.596, 16.3196)
+
+[node name="PotionSlot3Anchor" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial"]
+position = Vector2(197, 31)
+
+[node name="CollisionShape3D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial/PotionSlot3Anchor"]
+shape = SubResource("CircleShape2D_fbohy")
+
+[node name="PinJoint3" type="PinJoint2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial"]
+position = Vector2(196.978, 37.4038)
+node_a = NodePath("../PotionSlot3Anchor")
+node_b = NodePath("../WithdrawalVialBody")
+
+[node name="WithdrawalVialBody" type="RigidBody2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial"]
+position = Vector2(197, 49)
+rotation = -0.532836
+collision_layer = 4
+collision_mask = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial/WithdrawalVialBody"]
+position = Vector2(-1.29568, 2.86691)
+rotation = 0.539307
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("8_5uffc")
+
+[node name="WithdrawalSprite" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial/WithdrawalVialBody"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bah1q")
+position = Vector2(-16.3446, 27.3382)
+rotation = 0.539307
+scale = Vector2(0.081, 0.084)
+sprite_frames = SubResource("SpriteFrames_x0xxi")
+autoplay = "default"
+offset = Vector2(2.96582, -354.375)
+
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial/WithdrawalVialBody"]
+position = Vector2(-1.29568, 2.86691)
+rotation = 0.539307
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("9_5uffc")
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="SubViewportContainer/SubViewport/Node2D/Withdrawal Vial/WithdrawalVialBody"]
+visible = false
+position = Vector2(0.513565, 0.846252)
+polygon = PackedVector2Array(6.76019, -12.2171, -0.305664, -16.2358, -23.2963, 19.6077, -23.5194, 26.2688, -16.2708, 31.7786, -10.4438, 30.2748, 13.0924, -7.24774)
+
+[node name="1loop" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(30.8511, 35.1064)
+scale = Vector2(0.191489, 0.191489)
+texture = ExtResource("12_is0fx")
+
+[node name="1loop2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(73.4043, 60.1064)
+scale = Vector2(0.191489, 0.191489)
+texture = ExtResource("12_is0fx")
+
+[node name="1loop3" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(119.149, 88.8298)
+scale = Vector2(0.191489, 0.191489)
+texture = ExtResource("12_is0fx")
+
+[node name="1loop4" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(586.702, 68.617)
+scale = Vector2(0.297872, 0.297872)
+texture = ExtResource("12_is0fx")
+
+[node name="1loop6" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D"]
+position = Vector2(633.511, 48.9362)
+scale = Vector2(0.297872, 0.297872)
+texture = ExtResource("12_is0fx")
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -187.0
+offset_right = 89.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="SubViewportContainer2"]
+position = Vector2(45.5, -2)
+scale = Vector2(0.855263, 0.855263)
+color = Color(0.344036, 0.24364, 0.0125353, 1)
+texture = SubResource("NoiseTexture2D_k81hs")
+invert_enabled = true
+invert_border = 15.0
+polygon = PackedVector2Array(-28, 5, 55.3748, 5, 138, 5, 138, 157, -28, 157)
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewportContainer2"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(177, 135)
+render_target_update_mode = 4
+
+[node name="Polygon2D" type="Polygon2D" parent="SubViewportContainer2/SubViewport2"]
+position = Vector2(19.8, -4.19997)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-4, -1, 148, -1, 150, 144, -3, 142)
+
+[node name="PortraitSprite" type="Sprite2D" parent="SubViewportContainer2/SubViewport2"]
+unique_name_in_owner = true
+position = Vector2(92, 76)
+scale = Vector2(0.24001, 0.24001)
+texture = ExtResource("8_man4t")
+hframes = 6
+vframes = 6
+
+[node name="AnimationTree" type="AnimationTree" parent="SubViewportContainer2/SubViewport2"]
+tree_root = SubResource("AnimationNodeStateMachine_hrx10")
+advance_expression_base_node = NodePath("../../..")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewportContainer2/SubViewport2"]
+libraries = {
+&"": SubResource("AnimationLibrary_d2vhm"),
+&"Portrait Animations": SubResource("AnimationLibrary_ncpdo")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_bwe3b")
+position = Vector2(634, 347)
+texture = SubResource("GradientTexture2D_h4ktt")
+
+[node name="Drunkeffects" type="ColorRect" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_l6mi7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="HBoxContainer/Slot1/Button" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/Slot2/Button2" to="." method="_on_slot_2_pressed"]

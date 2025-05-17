@@ -1,6 +1,155 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd0jbh4metflb"]
+[gd_scene load_steps=24 format=3 uid="uid://cd0jbh4metflb"]
 
 [ext_resource type="Script" uid="uid://dgeewyjjpk4qn" path="res://addons/maaacks_game_template/base/scenes/loading_screen/loading_screen.gd" id="1_gbk34"]
+[ext_resource type="Texture2D" uid="uid://trqgvdpebgl4" path="res://Assets/Game Assets/Kobold/Almost Final_Ui_Spinny Light.png" id="2_wt67p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmiot"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u2eo"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05gvi"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtbf5"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5o3a"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ygyc"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2pq7"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhf0i"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkbj3"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1500, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a06ye"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(2000, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie2e5"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(0, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dui83"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcntl"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1000, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lbqs"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1500, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4s6u"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(2000, 1000, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jddyc"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(0, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pebwc"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqai7"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1000, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uonwy"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(1500, 1500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2h4i"]
+atlas = ExtResource("2_wt67p")
+region = Rect2(2000, 1500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysual"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmiot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u2eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05gvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtbf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5o3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ygyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2pq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhf0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkbj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a06ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie2e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dui83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcntl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lbqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4s6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jddyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pebwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqai7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uonwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2h4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="LoadingScreen" type="CanvasLayer"]
 process_mode = 3
@@ -16,19 +165,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BackPanel" type="Panel" parent="Control"]
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="BackgroundColor" type="ColorRect" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.501961)
+color = Color(0, 0, 0, 1)
 
 [node name="BackgroundTextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
@@ -41,14 +190,17 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 30.0
 offset_top = -23.0
 offset_right = -30.0
-offset_bottom = 98.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 50
 
 [node name="ProgressLabel" type="Label" parent="Control/VBoxContainer"]
@@ -59,6 +211,7 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 max_value = 1.0
@@ -76,6 +229,15 @@ initial_position = 2
 size = Vector2i(360, 100)
 ok_button_text = "Try Waiting"
 cancel_button_text = "Reload"
+
+[node name="AlmostFinalUiSpinnyLight" type="AnimatedSprite2D" parent="."]
+position = Vector2(628, 236)
+scale = Vector2(0.480001, 0.480001)
+sprite_frames = SubResource("SpriteFrames_ysual")
+autoplay = "default"
+frame_progress = 0.486397
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LoadingTimer" type="Timer" parent="."]
 unique_name_in_owner = true

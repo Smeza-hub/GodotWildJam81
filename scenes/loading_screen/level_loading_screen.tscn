@@ -9,3 +9,6 @@ _in_progress = "Loading Level..."
 _in_progress_waiting = "Still Loading Level..."
 _in_progress_still_waiting = "Still Loading Level... (%d seconds)"
 _complete = "Loading Level Complete!"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="2"]
+visible = false

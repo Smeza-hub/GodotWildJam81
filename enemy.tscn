@@ -1,12 +1,77 @@
-[gd_scene load_steps=31 format=3 uid="uid://oqq0lnvs6h50"]
+[gd_scene load_steps=188 format=3 uid="uid://oqq0lnvs6h50"]
 
 [ext_resource type="Script" uid="uid://dv4m3xhxygh32" path="res://enemy.gd" id="1_7k104"]
 [ext_resource type="Script" uid="uid://dao1d76pw5qnl" path="res://scripts/finitestatemachine.gd" id="2_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://b4ripli8pf1fc" path="res://Assets/Game Assets/Soldiers_1.png" id="2_iifgy"]
 [ext_resource type="Script" uid="uid://d25o8ulj30yve" path="res://scripts/enemy_idle_state.gd" id="3_qi2p4"]
+[ext_resource type="Shader" uid="uid://bwh2p77w6grpu" path="res://Assets/Game Assets/Shaders/FOV.gdshader" id="4_oj7qy"]
 [ext_resource type="Script" uid="uid://5him1hkhtjq6" path="res://scripts/enemy_chase_state.gd" id="5_epg4t"]
 [ext_resource type="Script" uid="uid://ctn1tu4cngd5l" path="res://scripts/enemy_search_state.gd" id="6_3yqyl"]
 [ext_resource type="Script" uid="uid://c0binlewbnygm" path="res://scripts/enemy_attack_state.gd" id="7_wujgv"]
+[ext_resource type="Texture2D" uid="uid://unm0xtdx4l8x" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/0_walk.png" id="8_6fu1e"]
+[ext_resource type="Texture2D" uid="uid://iykj2kdb63dr" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_180-0.png" id="9_p80fi"]
+[ext_resource type="Texture2D" uid="uid://tq1dqro1w1q" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_180-0.png" id="10_ju3h7"]
+[ext_resource type="Script" uid="uid://c687q01pb1yxq" path="res://scripts/enemy_patrol_state.gd" id="10_nr6c1"]
+[ext_resource type="Texture2D" uid="uid://b6sh7p0snx4pq" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_0-0.png" id="11_p3p7n"]
+[ext_resource type="Texture2D" uid="uid://dpxmt2evg37wp" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_0-0.png" id="12_8ehh3"]
+[ext_resource type="Texture2D" uid="uid://b00i78gpegd2s" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/180_walk.png" id="13_8nwx4"]
+[ext_resource type="Texture2D" uid="uid://cfc3pie6i3r3g" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_180-0.png" id="14_fq8ad"]
+[ext_resource type="Texture2D" uid="uid://dyj6id70r6cpk" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/45_walk.png" id="15_j1pr3"]
+[ext_resource type="Texture2D" uid="uid://dx2obb8feehow" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_45-0.png" id="16_xxnat"]
+[ext_resource type="Texture2D" uid="uid://psw1l6vr33um" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/315_walk.png" id="17_nettl"]
+[ext_resource type="Texture2D" uid="uid://cr630tignaeol" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_315-0.png" id="18_20yfm"]
+[ext_resource type="Texture2D" uid="uid://c7627h8pwevi6" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_0-0.png" id="19_q6aid"]
+[ext_resource type="Texture2D" uid="uid://cbg8faetxhqx3" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/90_walk.png" id="20_t62om"]
+[ext_resource type="Texture2D" uid="uid://dc7jcy7gyqq85" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_90-0.png" id="21_di3s7"]
+[ext_resource type="Texture2D" uid="uid://be1vl3hod4vbu" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/270_walk.png" id="22_p8kvh"]
+[ext_resource type="Texture2D" uid="uid://1i6tlsyqsa48" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_270-0.png" id="23_oj7qy"]
+[ext_resource type="Texture2D" uid="uid://1xjtru2intj8" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/135_walk.png" id="24_4qilb"]
+[ext_resource type="Texture2D" uid="uid://d0nsl4hiw1jem" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_135-0.png" id="25_uhdqh"]
+[ext_resource type="Texture2D" uid="uid://bvlpi0idrp7e8" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Diffuse/225_walk.png" id="26_ccbbw"]
+[ext_resource type="Texture2D" uid="uid://b4ig58svf2cu3" path="res://Assets/Game Assets/Kobold/newkobold/Walking_animations/Walking Normal/kobold_walk_225-0.png" id="27_m6srv"]
+[ext_resource type="Texture2D" uid="uid://d318fm2gvij5k" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_270-0.png" id="28_bx15q"]
+[ext_resource type="Texture2D" uid="uid://dgdwnutg52ar2" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_270-0.png" id="29_v02nr"]
+[ext_resource type="Texture2D" uid="uid://b2le7ml2neobq" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_45-0.png" id="30_8pk15"]
+[ext_resource type="Texture2D" uid="uid://ci0s8n5vhnl2w" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_45-0.png" id="31_yaian"]
+[ext_resource type="Texture2D" uid="uid://cohphewlb238c" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_90-0.png" id="32_w8nyb"]
+[ext_resource type="Texture2D" uid="uid://vhrd41woyuw6" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_90-0.png" id="33_sxkh0"]
+[ext_resource type="Texture2D" uid="uid://d1vo7d5rm83fq" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_135-0.png" id="34_pyvri"]
+[ext_resource type="Texture2D" uid="uid://bnqwqraxsk0wg" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_135-0.png" id="35_qftu3"]
+[ext_resource type="Texture2D" uid="uid://crknv40jogmos" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_225-0.png" id="36_ybt8m"]
+[ext_resource type="Texture2D" uid="uid://duy1kd2m7ctpv" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_225-0.png" id="37_4sfiy"]
+[ext_resource type="Texture2D" uid="uid://yd6k8m8c158b" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_315-0.png" id="38_hb2o4"]
+[ext_resource type="Texture2D" uid="uid://bcajqgl3yftev" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_315-0.png" id="39_nr6c1"]
+[ext_resource type="Texture2D" uid="uid://birlqsadcj6ge" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_180.png" id="41_hb2o4"]
+[ext_resource type="Texture2D" uid="uid://d37gcojuj8p1k" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_180.png" id="42_nr6c1"]
+[ext_resource type="Texture2D" uid="uid://cuf5g4lxijdie" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_45.png" id="43_8hbvk"]
+[ext_resource type="Texture2D" uid="uid://x2ctkdcwnkmp" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_45.png" id="44_0n35i"]
+[ext_resource type="Texture2D" uid="uid://dnu3t5w76hjkm" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_315.png" id="45_ywceh"]
+[ext_resource type="Texture2D" uid="uid://dftse604p5rxk" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_315.png" id="46_xwccp"]
+[ext_resource type="Texture2D" uid="uid://cdmaoaqqbswcr" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_0.png" id="47_hojbl"]
+[ext_resource type="Texture2D" uid="uid://b1yef0saryps8" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_0.png" id="48_34hay"]
+[ext_resource type="Texture2D" uid="uid://duyppgf7valrj" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_90.png" id="49_3un5y"]
+[ext_resource type="Texture2D" uid="uid://djjw1sa8v15e5" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_90.png" id="50_qnj4d"]
+[ext_resource type="Texture2D" uid="uid://bbpup2vh1dsqg" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_270.png" id="51_uifqy"]
+[ext_resource type="Texture2D" uid="uid://ci7eeytxeltc7" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_270.png" id="52_tqa47"]
+[ext_resource type="Texture2D" uid="uid://hbihqtkg647o" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_225.png" id="53_akc8q"]
+[ext_resource type="Texture2D" uid="uid://cqn703wxf617v" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Normal_Spritesheet/Gaurd_Walk_Normal_225.png" id="54_3d3oh"]
+[ext_resource type="Texture2D" uid="uid://dkb1iccsct5es" path="res://Assets/Game Assets/Guard/Walk/Gaurd_Walk_Diffuse_Spritesheet/Gaurd_Walk_Diffuse_135.png" id="55_2rjsx"]
+[ext_resource type="Texture2D" uid="uid://b0hbsgb4uyndb" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_180.png" id="57_nr6c1"]
+[ext_resource type="Texture2D" uid="uid://db0kta8ggy346" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_180.png" id="58_8hbvk"]
+[ext_resource type="Texture2D" uid="uid://b01chk6unfgd4" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_0.png" id="59_0n35i"]
+[ext_resource type="Texture2D" uid="uid://bdtc4kxsrlwgq" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_0.png" id="60_ywceh"]
+[ext_resource type="Texture2D" uid="uid://harhql7k03x6" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_45.png" id="61_xwccp"]
+[ext_resource type="Texture2D" uid="uid://ddy6p0dapyc6m" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_45.png" id="62_hojbl"]
+[ext_resource type="Texture2D" uid="uid://ffc0g2chvl0w" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_90.png" id="63_34hay"]
+[ext_resource type="Texture2D" uid="uid://cg05o2hireg6u" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_90.png" id="64_3un5y"]
+[ext_resource type="Texture2D" uid="uid://dtlcqdcx211rj" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_135.png" id="65_qnj4d"]
+[ext_resource type="Texture2D" uid="uid://yae8sw8eo3ll" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_135.png" id="66_uifqy"]
+[ext_resource type="Texture2D" uid="uid://bs1wdj774ksjr" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_225.png" id="67_tqa47"]
+[ext_resource type="Texture2D" uid="uid://ckdj8rervaolv" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_225.png" id="68_akc8q"]
+[ext_resource type="Texture2D" uid="uid://cfwk88vaof3ok" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_270.png" id="69_3d3oh"]
+[ext_resource type="Texture2D" uid="uid://bqswxiep6t617" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_270.png" id="70_2rjsx"]
+[ext_resource type="Texture2D" uid="uid://d71lhl14wcaf" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_315.png" id="71_raesi"]
+[ext_resource type="Texture2D" uid="uid://il52a1ic2ne7" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_315.png" id="72_8nkll"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3yqyl"]
 radius = 99.0202
@@ -158,6 +223,26 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wujgv"]
 radius = 33.7568
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4qilb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhdqh"]
+shader = ExtResource("4_oj7qy")
+shader_parameter/cone_angle = 22.5
+shader_parameter/start_angle = 269.815
+shader_parameter/fade_intensity = 1.94
+shader_parameter/circle_radius = 0.43
+shader_parameter/inner_circle_alpha = 0.0
+shader_parameter/outline_thickness = 0.012
+shader_parameter/custom_color = Color(0.4, 0.534, 0.588, 0.596)
+shader_parameter/cone_scale = 1.0
+
+[sub_resource type="Gradient" id="Gradient_ccbbw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m6srv"]
+gradient = SubResource("Gradient_ccbbw")
+width = 512
+height = 512
+
 [sub_resource type="Animation" id="Animation_hb8ge"]
 resource_name = "ConeSweep"
 length = 8.0
@@ -196,18 +281,1850 @@ _data = {
 &"RESET": SubResource("Animation_wujgv")
 }
 
+[sub_resource type="Animation" id="Animation_gs10s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_6fu1e")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nbrll"]
+diffuse_texture = ExtResource("9_p80fi")
+normal_texture = ExtResource("10_ju3h7")
+
+[sub_resource type="Animation" id="Animation_70qsr"]
+resource_name = "idle_back"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_nbrll")]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c8jyo"]
+diffuse_texture = ExtResource("30_8pk15")
+normal_texture = ExtResource("31_yaian")
+
+[sub_resource type="Animation" id="Animation_ho163"]
+resource_name = "idle_bottom_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_c8jyo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_murhm"]
+diffuse_texture = ExtResource("38_hb2o4")
+normal_texture = ExtResource("39_nr6c1")
+
+[sub_resource type="Animation" id="Animation_gmpck"]
+resource_name = "idle_bottom_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_murhm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2ch2s"]
+diffuse_texture = ExtResource("11_p3p7n")
+normal_texture = ExtResource("12_8ehh3")
+
+[sub_resource type="Animation" id="Animation_e3isr"]
+resource_name = "idle_front"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_2ch2s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c2cpa"]
+diffuse_texture = ExtResource("32_w8nyb")
+normal_texture = ExtResource("33_sxkh0")
+
+[sub_resource type="Animation" id="Animation_ov3kk"]
+resource_name = "idle_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_c2cpa")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x2ol7"]
+diffuse_texture = ExtResource("28_bx15q")
+normal_texture = ExtResource("29_v02nr")
+
+[sub_resource type="Animation" id="Animation_noiao"]
+resource_name = "idle_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_x2ol7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pv3ud"]
+diffuse_texture = ExtResource("34_pyvri")
+normal_texture = ExtResource("35_qftu3")
+
+[sub_resource type="Animation" id="Animation_f0g3d"]
+resource_name = "idle_top_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_pv3ud")]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1mu88"]
+diffuse_texture = ExtResource("36_ybt8m")
+normal_texture = ExtResource("37_4sfiy")
+
+[sub_resource type="Animation" id="Animation_fmii4"]
+resource_name = "idle_top_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_1mu88")]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_orc17"]
+diffuse_texture = ExtResource("13_8nwx4")
+normal_texture = ExtResource("14_fq8ad")
+
+[sub_resource type="Animation" id="Animation_0s5e8"]
+resource_name = "walk_back"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_orc17")]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nuuap"]
+diffuse_texture = ExtResource("15_j1pr3")
+normal_texture = ExtResource("16_xxnat")
+
+[sub_resource type="Animation" id="Animation_dip6k"]
+resource_name = "walk_bottom_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 32, 49]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_nuuap")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m4o2v"]
+diffuse_texture = ExtResource("17_nettl")
+normal_texture = ExtResource("18_20yfm")
+
+[sub_resource type="Animation" id="Animation_7l1ah"]
+resource_name = "walk_bottom_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 32, 49]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_m4o2v")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_70qsr"]
+diffuse_texture = ExtResource("8_6fu1e")
+normal_texture = ExtResource("19_q6aid")
+
+[sub_resource type="Animation" id="Animation_x3b8j"]
+resource_name = "walk_front"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_70qsr")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wphrh"]
+diffuse_texture = ExtResource("20_t62om")
+normal_texture = ExtResource("21_di3s7")
+
+[sub_resource type="Animation" id="Animation_dk22a"]
+resource_name = "walk_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 32, 49]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_wphrh")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_vxhwj"]
+diffuse_texture = ExtResource("22_p8kvh")
+normal_texture = ExtResource("23_oj7qy")
+
+[sub_resource type="Animation" id="Animation_6hcen"]
+resource_name = "walk_right"
+length = 1.06667
+loop_mode = 1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [0, 32]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_vxhwj")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j6e6r"]
+diffuse_texture = ExtResource("24_4qilb")
+normal_texture = ExtResource("25_uhdqh")
+
+[sub_resource type="Animation" id="Animation_nplo3"]
+resource_name = "walk_top_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 32, 49]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_j6e6r")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wqbuy"]
+diffuse_texture = ExtResource("26_ccbbw")
+normal_texture = ExtResource("27_m6srv")
+
+[sub_resource type="Animation" id="Animation_orc17"]
+resource_name = "walk_top_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 32, 49]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_wqbuy")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [32]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
+_data = {
+&"RESET": SubResource("Animation_gs10s"),
+&"idle_back": SubResource("Animation_70qsr"),
+&"idle_bottom_left": SubResource("Animation_ho163"),
+&"idle_bottom_right": SubResource("Animation_gmpck"),
+&"idle_front": SubResource("Animation_e3isr"),
+&"idle_left": SubResource("Animation_ov3kk"),
+&"idle_right": SubResource("Animation_noiao"),
+&"idle_top_left": SubResource("Animation_f0g3d"),
+&"idle_top_right": SubResource("Animation_fmii4"),
+&"walk_back": SubResource("Animation_0s5e8"),
+&"walk_bottom_left": SubResource("Animation_dip6k"),
+&"walk_bottom_right": SubResource("Animation_7l1ah"),
+&"walk_front": SubResource("Animation_x3b8j"),
+&"walk_left": SubResource("Animation_dk22a"),
+&"walk_right": SubResource("Animation_6hcen"),
+&"walk_top_left": SubResource("Animation_nplo3"),
+&"walk_top_right": SubResource("Animation_orc17")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4xrqw"]
+diffuse_texture = ExtResource("69_3d3oh")
+normal_texture = ExtResource("70_2rjsx")
+
+[sub_resource type="Animation" id="Animation_putnh"]
+resource_name = "Enemy Idle  Right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_4xrqw")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kfyl1"]
+diffuse_texture = ExtResource("57_nr6c1")
+normal_texture = ExtResource("58_8hbvk")
+
+[sub_resource type="Animation" id="Animation_o838k"]
+resource_name = "Enemy Idle Back"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_kfyl1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bgmq1"]
+diffuse_texture = ExtResource("61_xwccp")
+normal_texture = ExtResource("62_hojbl")
+
+[sub_resource type="Animation" id="Animation_pf1hb"]
+resource_name = "Enemy Idle Bottom left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_bgmq1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mtqqc"]
+diffuse_texture = ExtResource("59_0n35i")
+normal_texture = ExtResource("60_ywceh")
+
+[sub_resource type="Animation" id="Animation_db1s4"]
+resource_name = "Enemy Idle Front"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_mtqqc")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xk8vo"]
+diffuse_texture = ExtResource("63_34hay")
+normal_texture = ExtResource("64_3un5y")
+
+[sub_resource type="Animation" id="Animation_qsno1"]
+resource_name = "Enemy Idle Left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_xk8vo")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w6hdp"]
+diffuse_texture = ExtResource("65_qnj4d")
+normal_texture = ExtResource("66_uifqy")
+
+[sub_resource type="Animation" id="Animation_h5yvy"]
+resource_name = "Enemy Idle Top Left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_w6hdp")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_minnm"]
+diffuse_texture = ExtResource("67_tqa47")
+normal_texture = ExtResource("68_akc8q")
+
+[sub_resource type="Animation" id="Animation_2jwx8"]
+resource_name = "Enemy Idle Top Right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_minnm")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_x0gcn"]
+diffuse_texture = ExtResource("71_raesi")
+normal_texture = ExtResource("72_8nkll")
+
+[sub_resource type="Animation" id="Animation_l1501"]
+resource_name = "Enemy Idle bottom Right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 30]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_x0gcn")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_raesi"]
+diffuse_texture = ExtResource("41_hb2o4")
+normal_texture = ExtResource("42_nr6c1")
+
+[sub_resource type="Animation" id="Animation_ybt8m"]
+resource_name = "Enemy_Walk_back"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_raesi")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8nkll"]
+diffuse_texture = ExtResource("43_8hbvk")
+normal_texture = ExtResource("44_0n35i")
+
+[sub_resource type="Animation" id="Animation_8hbvk"]
+resource_name = "Enemy_Walk_bottom_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_8nkll")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o838k"]
+diffuse_texture = ExtResource("45_ywceh")
+normal_texture = ExtResource("46_xwccp")
+
+[sub_resource type="Animation" id="Animation_uifqy"]
+resource_name = "Enemy_Walk_bottom_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_o838k")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_db1s4"]
+diffuse_texture = ExtResource("47_hojbl")
+normal_texture = ExtResource("48_34hay")
+
+[sub_resource type="Animation" id="Animation_xwccp"]
+resource_name = "Enemy_Walk_front"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_db1s4")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_4sfiy"]
+diffuse_texture = ExtResource("49_3un5y")
+normal_texture = ExtResource("50_qnj4d")
+
+[sub_resource type="Animation" id="Animation_hb2o4"]
+resource_name = "Enemy_Walk_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_4sfiy")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_pf1hb"]
+diffuse_texture = ExtResource("51_uifqy")
+normal_texture = ExtResource("52_tqa47")
+
+[sub_resource type="Animation" id="Animation_3un5y"]
+resource_name = "Enemy_Walk_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_pf1hb")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qsno1"]
+diffuse_texture = ExtResource("53_akc8q")
+normal_texture = ExtResource("54_3d3oh")
+
+[sub_resource type="Animation" id="Animation_ywceh"]
+resource_name = "Enemy_Walk_top_right"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_qsno1")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_hojbl"]
+resource_name = "Enemy_Walk_top_left"
+length = 1.06667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.06667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 31]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("55_2rjsx")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hojbl"]
+_data = {
+&"Enemy Idle  Right": SubResource("Animation_putnh"),
+&"Enemy Idle Back": SubResource("Animation_o838k"),
+&"Enemy Idle Bottom left": SubResource("Animation_pf1hb"),
+&"Enemy Idle Front": SubResource("Animation_db1s4"),
+&"Enemy Idle Left": SubResource("Animation_qsno1"),
+&"Enemy Idle Top Left": SubResource("Animation_h5yvy"),
+&"Enemy Idle Top Right": SubResource("Animation_2jwx8"),
+&"Enemy Idle bottom Right": SubResource("Animation_l1501"),
+&"Enemy_Walk_back": SubResource("Animation_ybt8m"),
+&"Enemy_Walk_bottom_left": SubResource("Animation_8hbvk"),
+&"Enemy_Walk_bottom_right": SubResource("Animation_uifqy"),
+&"Enemy_Walk_front": SubResource("Animation_xwccp"),
+&"Enemy_Walk_left": SubResource("Animation_hb2o4"),
+&"Enemy_Walk_right": SubResource("Animation_3un5y"),
+&"Enemy_Walk_top_left": SubResource("Animation_hojbl"),
+&"Enemy_Walk_top_right": SubResource("Animation_ywceh")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7334x"]
+animation = &"Enemy Animations/Enemy Idle Front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3tjer"]
+animation = &"Enemy Animations/Enemy Idle Back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j2dtv"]
+animation = &"Enemy Animations/Enemy Idle Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_etfc0"]
+animation = &"Enemy Animations/Enemy Idle  Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hjida"]
+animation = &"Enemy Animations/Enemy Idle Bottom left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xtldk"]
+animation = &"Enemy Animations/Enemy Idle Top Left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_772t2"]
+animation = &"Enemy Animations/Enemy Idle Top Right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_61joo"]
+animation = &"Enemy Animations/Enemy Idle bottom Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_6hcen"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7334x")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_3tjer")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_j2dtv")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_etfc0")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_hjida")
+blend_point_4/pos = Vector2(-0.4, 0.6)
+blend_point_5/node = SubResource("AnimationNodeAnimation_xtldk")
+blend_point_5/pos = Vector2(-0.4, -0.6)
+blend_point_6/node = SubResource("AnimationNodeAnimation_772t2")
+blend_point_6/pos = Vector2(0.4, -0.5)
+blend_point_7/node = SubResource("AnimationNodeAnimation_61joo")
+blend_point_7/pos = Vector2(0.4, 0.6)
+blend_mode = 2
+sync = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u3nlb"]
+animation = &"Enemy Animations/Enemy_Walk_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ek65e"]
+resource_local_to_scene = true
+animation = &"Enemy Animations/Enemy_Walk_front"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6iskt"]
+animation = &"Enemy Animations/Enemy_Walk_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k4a2f"]
+animation = &"Enemy Animations/Enemy_Walk_back"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_164yw"]
+animation = &"Enemy Animations/Enemy_Walk_top_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hbwpg"]
+animation = &"Enemy Animations/Enemy_Walk_bottom_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7i0ir"]
+animation = &"Enemy Animations/Enemy_Walk_bottom_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ufdbj"]
+animation = &"Enemy Animations/Enemy_Walk_top_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_x3b8j"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_u3nlb")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ek65e")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_6iskt")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_k4a2f")
+blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_164yw")
+blend_point_4/pos = Vector2(-0.5, -0.5)
+blend_point_5/node = SubResource("AnimationNodeAnimation_hbwpg")
+blend_point_5/pos = Vector2(-0.5, 0.5)
+blend_point_6/node = SubResource("AnimationNodeAnimation_7i0ir")
+blend_point_6/pos = Vector2(0.5, 0.5)
+blend_point_7/node = SubResource("AnimationNodeAnimation_ufdbj")
+blend_point_7/pos = Vector2(0.5, -0.5)
+blend_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0s5e8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jb5ke"]
+advance_mode = 2
+advance_expression = "!velocity"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t8eg7"]
+advance_mode = 2
+advance_expression = "velocity"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p8kvh"]
+state_machine_type = 1
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6hcen")
+states/Idle/position = Vector2(327, 143)
+states/Start/position = Vector2(142, 120)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_x3b8j")
+states/Walk/position = Vector2(278, 41)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_0s5e8"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_jb5ke"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_t8eg7")]
+graph_offset = Vector2(25, -3)
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 16
+motion_mode = 1
 safe_margin = 0.25
 script = ExtResource("1_7k104")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-scale = Vector2(6.4, 6.4)
+position = Vector2(0.699997, -85.3)
+scale = Vector2(5.4, 5.4)
 collision_mask = 17
 
 [node name="HurtBox" type="Area2D" parent="."]
-position = Vector2(0, 11)
+position = Vector2(0.699997, -74.3)
+scale = Vector2(0.84375, 0.84375)
 collision_layer = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox"]
@@ -215,6 +2132,8 @@ shape = SubResource("CircleShape2D_3yqyl")
 debug_color = Color(0.990555, 0, 0.276874, 0.42)
 
 [node name="Hearing" type="Area2D" parent="."]
+position = Vector2(0.699997, -85.3)
+scale = Vector2(0.84375, 0.84375)
 
 [node name="SoundDetection" type="CollisionShape2D" parent="Hearing"]
 scale = Vector2(6.4, 6.4)
@@ -222,7 +2141,8 @@ shape = SubResource("CircleShape2D_ar8e5")
 disabled = true
 
 [node name="Vision" type="Area2D" parent="."]
-scale = Vector2(6.4, 6.4)
+position = Vector2(0.699997, -85.3)
+scale = Vector2(5.4, 5.4)
 
 [node name="VisionDetection" type="CollisionShape2D" parent="Vision"]
 position = Vector2(-0.15625, 0.15625)
@@ -230,6 +2150,7 @@ rotation = 0.785398
 shape = SubResource("ConvexPolygonShape2D_3yqyl")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 scale = Vector2(6.4, 6.4)
 sprite_frames = SubResource("SpriteFrames_n0g06")
@@ -238,13 +2159,32 @@ frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 51)
-scale = Vector2(1.48148, 1.48148)
+position = Vector2(0.699997, -34.3)
+scale = Vector2(1.25, 1.25)
 shape = SubResource("CircleShape2D_wujgv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4qilb")
+position = Vector2(0.699997, -85.3)
+scale = Vector2(0.61344, 0.61344)
+texture = ExtResource("8_6fu1e")
+hframes = 32
+vframes = 6
+
+[node name="FOV_indicator" type="Sprite2D" parent="Sprite2D"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_uhdqh")
+rotation = 3.93572
+scale = Vector2(4.11, 4.11)
+texture = SubResource("GradientTexture2D_m6srv")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.699997, -85.3)
+scale = Vector2(0.84375, 0.84375)
 
 [node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("state")]
 script = ExtResource("2_4gyqm")
-state = NodePath("EnemyIdleState")
+state = NodePath("EnemyPatrolState")
 metadata/_custom_type_script = "uid://dao1d76pw5qnl"
 
 [node name="EnemyIdleState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "vision_area", "vision_cone", "animation_player", "vision_cast")]
@@ -253,7 +2193,7 @@ actor = NodePath("../..")
 animator = NodePath("../../AnimatedSprite")
 vision_area = NodePath("../../Vision")
 vision_cone = NodePath("../../Vision/VisionDetection")
-animation_player = NodePath("../../AnimationPlayer")
+animation_player = NodePath("../../Coneanimator")
 vision_cast = NodePath("../../RayCast2D")
 metadata/_custom_type_script = "uid://d25o8ulj30yve"
 
@@ -266,11 +2206,12 @@ chase_timer = NodePath("../../ChaseEndTimer")
 hurt_box = NodePath("../../HurtBox")
 metadata/_custom_type_script = "uid://5him1hkhtjq6"
 
-[node name="EnemySearchState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "vision_cast")]
+[node name="EnemySearchState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "vision_cast", "search_timer")]
 script = ExtResource("6_3yqyl")
 actor = NodePath("../..")
 animator = NodePath("../../AnimatedSprite")
 vision_cast = NodePath("../../RayCast2D")
+search_timer = NodePath("../../SearchTimer")
 metadata/_custom_type_script = "uid://ctn1tu4cngd5l"
 
 [node name="EnemyAttackState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "animator", "attack_timer")]
@@ -280,18 +2221,42 @@ animator = NodePath("../../AnimatedSprite")
 attack_timer = NodePath("../../AttackTimer")
 metadata/_custom_type_script = "uid://c0binlewbnygm"
 
+[node name="EnemyPatrolState" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor", "vision_cast", "vision_area", "vision_cone", "wait_timer")]
+script = ExtResource("10_nr6c1")
+actor = NodePath("../..")
+vision_cast = NodePath("../../RayCast2D")
+vision_area = NodePath("../../Vision")
+vision_cone = NodePath("../../Vision/VisionDetection")
+wait_timer = NodePath("../../PatrolTimer")
+metadata/_custom_type_script = "uid://c687q01pb1yxq"
+
 [node name="ChaseEndTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Coneanimator" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_e1ltt")
 }
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
 
 [node name="AttackTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6hcen"),
+&"Enemy Animations": SubResource("AnimationLibrary_hojbl")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_p8kvh")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = Vector2(-0.00307065, 1.07692)
+parameters/Walk/blend_position = Vector2(0.0302491, -0.835165)
+
+[node name="SearchTimer" type="Timer" parent="."]
+
+[node name="PatrolTimer" type="Timer" parent="."]

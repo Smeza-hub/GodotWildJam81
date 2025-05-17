@@ -1,5 +1,6 @@
-extends State
 class_name EnemyAttackState
+extends State
+
 
 @export var actor: Enemy
 @export var animator: AnimatedSprite2D

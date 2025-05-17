@@ -4,6 +4,7 @@ extends Node
 @export var state: State
 
 func _ready():
+	await get_tree().create_timer(0.5).timeout
 	change_state(state)
 
 func change_state(new_state: State):

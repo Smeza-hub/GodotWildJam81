@@ -8,9 +8,10 @@
 [node name="MasterOptionsMenu" instance=ExtResource("1_uaidt")]
 
 [node name="TabContainer" parent="." index="0"]
-current_tab = 0
+current_tab = 2
 
 [node name="Controls" parent="TabContainer" index="1" instance=ExtResource("2_15wl6")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -20,6 +21,5 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="Video" parent="TabContainer" index="3" instance=ExtResource("4_1t848")]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2

@@ -1,20 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5ldlcigscj0j"]
+[gd_scene load_steps=10 format=3 uid="uid://c5ldlcigscj0j"]
 
-[ext_resource type="PackedScene" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu.tscn" id="1_w1dvr"]
-[ext_resource type="Script" path="res://scenes/menus/options_menu/master_options_menu.gd" id="2_bn2s3"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/input/input_options_menu.tscn" id="3_6wkjv"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/input/input_extras_menu.tscn" id="4_kr6xa"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/audio/audio_options_menu.tscn" id="5_n2uhm"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/video/video_options_menu_with_extras.tscn" id="6_eys63"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/game/game_options_menu.tscn" id="7_pvnud"]
+[ext_resource type="PackedScene" uid="uid://bvwl11s2p0hd" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/master_options_menu.tscn" id="1_w1dvr"]
+[ext_resource type="Script" uid="uid://b5418omq0y2td" path="res://scenes/menus/options_menu/master_options_menu.gd" id="2_bn2s3"]
+[ext_resource type="PackedScene" uid="uid://ctbhasboph83n" path="res://scenes/menus/options_menu/input/input_options_menu.tscn" id="3_6wkjv"]
+[ext_resource type="PackedScene" uid="uid://ckivdu4byjmqd" path="res://scenes/menus/options_menu/input/input_extras_menu.tscn" id="4_kr6xa"]
+[ext_resource type="PackedScene" uid="uid://hn148s7g3dpa" path="res://scenes/menus/options_menu/audio/audio_options_menu.tscn" id="5_n2uhm"]
+[ext_resource type="PackedScene" uid="uid://n37bh0ulqwen" path="res://scenes/menus/options_menu/video/video_options_menu_with_extras.tscn" id="6_eys63"]
+[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="8_6wkjv"]
+[ext_resource type="Script" uid="uid://cafqki2b08kwu" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/option_control.gd" id="8_bn2s3"]
+[ext_resource type="PackedScene" uid="uid://bgchwvjbv4u1i" path="res://scenes/menus/options_menu/game/reset_game_control/reset_game_control.tscn" id="9_kr6xa"]
 
 [node name="MasterOptionsMenu" instance=ExtResource("1_w1dvr")]
 script = ExtResource("2_bn2s3")
 
 [node name="TabContainer" parent="." index="0"]
-current_tab = 0
+current_tab = 4
 
 [node name="Controls" parent="TabContainer" index="1" instance=ExtResource("3_6wkjv")]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -33,7 +36,46 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Game" parent="TabContainer" index="5" instance=ExtResource("7_pvnud")]
-visible = false
+[node name="Game" type="MarginContainer" parent="TabContainer" index="5"]
 layout_mode = 2
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("8_bn2s3")
+option_section = 4
+section = "GameSettings"
+default_value = null
 metadata/_tab_index = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Game" index="0"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+script = ExtResource("8_6wkjv")
+search_depth = 2
+
+[node name="ResetGameControl" parent="TabContainer/Game/VBoxContainer" index="0" instance=ExtResource("9_kr6xa")]
+layout_mode = 2
+
+[node name="OptionControl" type="HBoxContainer" parent="TabContainer/Game/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+script = ExtResource("8_bn2s3")
+option_name = "Disable Visual Effects"
+option_section = 6
+key = "DisableVisualEffects"
+section = "CustomSettings"
+default_value = true
+
+[node name="OptionLabel" type="Label" parent="TabContainer/Game/VBoxContainer/OptionControl" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Disable Visual Effect"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Game/VBoxContainer/OptionControl" index="1"]
+layout_mode = 2
+button_pressed = true
+
+[connection signal="reset_confirmed" from="TabContainer/Game/VBoxContainer/ResetGameControl" to="TabContainer/Game" method="_on_ResetGameControl_reset_confirmed"]

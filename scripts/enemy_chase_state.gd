@@ -19,15 +19,17 @@ func _enter_state()->void:
 	state_active = true
 	
 func _exit_state()->void:
+	actor.fov_indicator.visible = false
 	set_physics_process(false)
 	chase_timer.stop()
 	state_active = false
 func _physics_process(delta: float) -> void:
 	var target_pos = actor.target.global_position
 	actor.nav_agent.target_position = target_pos
-	
+
 	var next_path_point = actor.nav_agent.get_next_path_position()
 	var direction = (next_path_point - actor.global_position).normalized()
+	actor.target_direction = direction.normalized()
 	actor.velocity = actor.velocity.move_toward(direction * actor.max_speed, actor.acceleration * delta)
 	
 	

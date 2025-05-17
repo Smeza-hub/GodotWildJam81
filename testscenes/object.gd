@@ -1,7 +1,7 @@
 extends StaticBody2D
-
+class_name Interactable
 @onready var interactablearea: Area2D = $interactablearea
-signal level_won
+var can_interact: bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -11,5 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
+	if !can_interact:
+		return
 	modulate.a = 0.5
-	level_won.emit()
+	

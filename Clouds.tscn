@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://clhjp7vkb4t6q"]
+
+[ext_resource type="Shader" uid="uid://bkw3iruw4q0kh" path="res://Assets/Game Assets/Shaders/clouds2D.gdshader" id="1_tjf83"]
+
+[sub_resource type="Gradient" id="Gradient_7etlo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.5625, 0.571875)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w4jqq"]
+gradient = SubResource("Gradient_7etlo")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kr8qm"]
+width = 1920
+height = 1080
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr7wg"]
+shader = ExtResource("1_tjf83")
+shader_parameter/tint = Color(0.1, 0.139, 0.243, 0.249)
+shader_parameter/noise_texture_2 = SubResource("NoiseTexture2D_kr8qm")
+shader_parameter/gradient_texture = SubResource("GradientTexture2D_w4jqq")
+shader_parameter/scroll_direction_1 = Vector2(0.7, -0.7)
+shader_parameter/time_scale_1 = 0.001
+shader_parameter/tile_factor_1 = 0.569
+shader_parameter/scroll_direction_2 = Vector2(0.75, 0.25)
+shader_parameter/time_scale_2 = 0.005
+shader_parameter/tile_factor_2 = 0.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mjuyb"]
+noise_type = 3
+frequency = 0.0228
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kqx77"]
+width = 1920
+height = 1080
+seamless = true
+noise = SubResource("FastNoiseLite_mjuyb")
+
+[node name="Node2D" type="Sprite2D"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rr7wg")
+texture = SubResource("NoiseTexture2D_kqx77")

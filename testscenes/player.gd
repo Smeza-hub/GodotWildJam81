@@ -1,12 +1,16 @@
 extends CharacterBody2D
 class_name Player
 
+@export var level_node:Node
+
+
 @export var BASE_SPEED: float = 500.0
 @export var BASE_ACCELERATION: float = 2000
 const BASE_HEALTH: float = 100
+const SPRITE_BASE_SCALE = Vector2(1.84,1.84)
 const BASE_SCALE: = Vector2(1.08, 1.08)
 const BASE_TOLERANCE:float = 100
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
+
 @onready var interactablearea: Area2D = $interactablearea
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -19,8 +23,13 @@ const BASE_TOLERANCE:float = 100
 var last_facing_direction := Vector2(0,-1)
 var Max_health: float = BASE_HEALTH
 var health: float = BASE_HEALTH
+
 var max_tolerance: float = BASE_TOLERANCE
-var tolerance:float = 0
+var tolerance:float = 50
+var is_drunk = false
+var in_withdrawal = false
+var drunk_delta = 0
+
 var speed: float = BASE_SPEED
 var acceleration: float = BASE_ACCELERATION
 var potions_in_inventory = []
@@ -39,14 +48,24 @@ var last_input_direction := Vector2.ZERO
 var smoke_shroud_active = false
 var smoke_particle = preload("res://smoke_particle.tscn")
 
+var nearby_interactables: Array =[]
+
+signal player_died
+signal player_damaged
+
+var active_effects = {}
 
 func _ready():
+	print(Config.get_config(AppSettings.CUSTOM_SECTION, "DisableVisualEffects"))
 	Global.player = self
 	speed = BASE_SPEED
 	acceleration= BASE_ACCELERATION
 	set_process_input(true)
-
+func _unhandled_input(event):
+	if event.is_action_pressed("interact"):
+		_interact()
 func _physics_process(delta: float) -> void:
+	drunk_delta+= delta
 	var input_vector = Vector2.ZERO
 	if is_teleport_movement:
 		handle_teleport_movement()
@@ -55,20 +74,19 @@ func _physics_process(delta: float) -> void:
 	if !is_confused:
 		input_vector = Input.get_vector("left","right","up","down")
 	elif is_confused:
-		input_vector = Input.get_vector(
-			confused_dir["left"],
-			confused_dir["right"],
-			confused_dir["up"],
-			confused_dir["down"]
-		)
+		input_vector = Input.get_vector("right","left","down","up")
+		
 	if input_vector.length() >0.1:
+		if is_drunk or in_withdrawal:
+			var drunk_angle = sin(drunk_delta * 3) * 0.5
+			input_vector = input_vector.rotated(drunk_angle).normalized()
 		var target_angle = input_vector.angle()
 		facing_angle = lerp_angle(facing_angle,target_angle,10.0*delta)
 		last_facing_direction = velocity.normalized()
 	
 	
 	animation_tree.set("parameters/Walk/blend_position",last_facing_direction)
-	animation_tree.set("parameters/Crouch/blend_position",last_facing_direction)
+	animation_tree.set("parameters/Idle/blend_position",last_facing_direction)
 	var target_velocity = input_vector * speed
 	velocity = velocity.move_toward(target_velocity ,acceleration * delta) 
 	
@@ -77,27 +95,34 @@ func _physics_process(delta: float) -> void:
 		
 	intended_dir.target_position = Vector2.RIGHT.rotated(facing_angle) * 100
 	move_and_slide()
-
-func _interact(area):
-	area.interact()
+func _process(delta: float) -> void:
+	_handle_tolerance(delta)
+func _interact():
+	if nearby_interactables.is_empty():
+		return
+	var closest = null
+	var closest_dist = INF
+	for obj in nearby_interactables:
+		if obj.can_interact == false:
+			continue
+		var dist = global_position.distance_to(obj.global_position)
+		if dist < closest_dist:
+			closest = obj
+			closest_dist = dist
+	if closest:
+		closest.interact()
 
 func _on_interactablearea_area_entered(area: Area2D) -> void:
+	if !area.is_in_group("interactable"):
+		return
 	var interact_object = area.get_parent()
-	_interact(interact_object)
+	if interact_object not in nearby_interactables:
+		nearby_interactables.append(interact_object)
 
 func _on_interactablearea_area_exited(area: Area2D) -> void:
-	pass # Replace with function body.
+	var interact_object = area.get_parent()
+	nearby_interactables.erase(interact_object)
 
-
-#func _handle_animation(direction,velocity):
-	#if velocity == vector2.ZERO:
-		#pass
-	#pass
-#func switch_animation(animation):
-	#var current_frame = animated_sprite.get_frame()
-	#var current_progress = animated_sprite.get_frame_progress()
-	#animated_sprite.play(animation)
-	#animated_sprite.set_frame_and_progress(current_frame, current_progress)
 func handle_teleport_movement():
 	var input_dir: Vector2
 	if is_confused:
@@ -135,9 +160,22 @@ func handle_teleport_movement():
 	elif input_dir == Vector2.ZERO:
 		last_input_direction = Vector2.ZERO
 func use_item(effect1,effect2):
-	effect1.call(self)
-	effect2.call(self)
-	
+	apply_effect(effect1)
+	apply_effect(effect2)
+func apply_effect(effect:Callable):
+	var effect_name = effect.get_method()
+	if active_effects.has(effect_name):
+		if typeof(active_effects[effect_name]) == TYPE_BOOL:
+			return
+		if typeof(effect) == TYPE_CALLABLE:
+			effect.call(self)
+		else:
+		# lambda
+			effect.call()
+		var timer: Timer = active_effects[effect_name]
+		timer.start()
+	else:
+		effect.call(self)
 func take_damage(amount,enemy:Enemy,knockback):
 	print("attacked")
 	if smoke_shroud_active:
@@ -165,11 +203,27 @@ func take_damage(amount,enemy:Enemy,knockback):
 		var new_smoke_particle2 = smoke_particle.instantiate()
 		add_child(new_smoke_particle2)
 	else:
+		player_damaged.emit()
 		health = clamp(health-amount,0,Max_health)
+		if health < 1:
+			level_node.level_lost.emit()
 		velocity = Vector2.ZERO
 		var enemy_direction = global_position.direction_to(enemy.global_position)
 		velocity = -(enemy_direction * knockback)
-	
 func increase_tolerance():
-	tolerance += 30
-	
+	tolerance = clamp(tolerance + 20,0,100)
+func _handle_tolerance(delta):
+	tolerance = clamp(tolerance - (2 * delta), 0, 100)
+
+	if tolerance <= max_tolerance * 0.20:
+		is_drunk = false
+		in_withdrawal = true
+		health = clamp(health - 1 * delta, 0, Max_health)
+
+	elif tolerance >= max_tolerance * 0.80:
+		is_drunk = true
+		in_withdrawal = false
+
+	else:
+		is_drunk = false
+		in_withdrawal = false

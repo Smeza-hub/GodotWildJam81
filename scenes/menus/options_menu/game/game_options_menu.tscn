@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq5wf2vhpey3m"]
+[gd_scene load_steps=5 format=3 uid="uid://cq5wf2vhpey3m"]
 
-[ext_resource type="Script" path="res://scenes/menus/options_menu/game/game_options_menu.gd" id="1_hvcyg"]
-[ext_resource type="Script" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="2_t8t6j"]
-[ext_resource type="PackedScene" path="res://scenes/menus/options_menu/game/reset_game_control/reset_game_control.tscn" id="3_pfgxr"]
+[ext_resource type="Script" uid="uid://cvpyo7ks1orug" path="res://scenes/menus/options_menu/game/game_options_menu.gd" id="1_hvcyg"]
+[ext_resource type="Script" uid="uid://1nf36h0gms3q" path="res://addons/maaacks_game_template/base/scripts/capture_focus.gd" id="2_t8t6j"]
+[ext_resource type="PackedScene" uid="uid://bgchwvjbv4u1i" path="res://scenes/menus/options_menu/game/reset_game_control/reset_game_control.tscn" id="3_pfgxr"]
+[ext_resource type="Script" uid="uid://cafqki2b08kwu" path="res://addons/maaacks_game_template/base/scenes/menus/options_menu/option_control/option_control.gd" id="4_t8t6j"]
 
 [node name="Game" type="MarginContainer"]
 anchors_preset = 15
@@ -21,6 +22,26 @@ script = ExtResource("2_t8t6j")
 search_depth = 2
 
 [node name="ResetGameControl" parent="VBoxContainer" instance=ExtResource("3_pfgxr")]
+layout_mode = 2
+
+[node name="OptionControl" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+script = ExtResource("4_t8t6j")
+option_name = "Disable Visual Effects"
+option_section = 6
+key = "DisableVisualEffects"
+section = "CustomSettings"
+default_value = false
+
+[node name="OptionLabel" type="Label" parent="VBoxContainer/OptionControl"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Disable Visual Effects :"
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/OptionControl"]
 layout_mode = 2
 
 [connection signal="reset_confirmed" from="VBoxContainer/ResetGameControl" to="." method="_on_ResetGameControl_reset_confirmed"]

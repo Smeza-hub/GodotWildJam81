@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh3fnipkafr40"]
+
+[ext_resource type="Texture2D" uid="uid://dvmvsywtogakw" path="res://Assets/Game Assets/Level Assets/wagon_broken_ortho_normal.png" id="1_vgsx8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bqoa7"]
+diffuse_texture = ExtResource("1_vgsx8")
+normal_texture = ExtResource("1_vgsx8")
+
+[sub_resource type="Gradient" id="Gradient_0iaj8"]
+offsets = PackedFloat32Array(0, 0.98)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8sydr"]
+gradient = SubResource("Gradient_0iaj8")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_bqoa7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(163, 356)
+scale = Vector2(6, 6)
+energy = 2.0
+texture = SubResource("GradientTexture2D_8sydr")
+height = 100.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)

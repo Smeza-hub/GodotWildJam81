@@ -32,6 +32,7 @@ var current_level_id : int :
 	set = set_current_level_id
 
 func set_current_level_id(value : int) -> void:
+	print_stack()
 	current_level_id = value
 
 func _try_connecting_signal_to_node(node : Node, signal_name : String, callable : Callable) -> void:
