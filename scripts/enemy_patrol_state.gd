@@ -13,6 +13,7 @@ var last_patrol_point:int
 var waiting: bool = false
 @export var wait_timer:Timer
 signal player_found
+signal light_seen
 
 func _ready() -> void:
 	current_patrol_point = 0
@@ -49,7 +50,6 @@ func _physics_process(delta: float) -> void:
 		vision_cone.rotation = target_angle  - PI/2
 		vision_cast.target_position = actor.global_position.direction_to(actor.target.global_position) * 115
 
-
 func travel_to_point():
 	last_patrol_point = current_patrol_point
 	print(current_patrol_point + 1)
@@ -76,3 +76,6 @@ func _on_found_player(body):
 	if collider and collider.is_in_group("player"):
 		print("emitting")
 		emit_signal("player_found")
+	if !collider:
+		actor.last_known_pos = actor.target.global_position
+		emit_signal("light_seen")

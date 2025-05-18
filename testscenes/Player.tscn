@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://ddos4fllxhx5u"]
+[gd_scene load_steps=149 format=3 uid="uid://ddos4fllxhx5u"]
 
 [ext_resource type="Script" uid="uid://c7n5j1fp0m4uw" path="res://testscenes/player.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://dpxmt2evg37wp" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_0-0.png" id="3_12egq"]
@@ -33,6 +33,53 @@
 [ext_resource type="Texture2D" uid="uid://duy1kd2m7ctpv" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_225-0.png" id="31_gff6s"]
 [ext_resource type="Texture2D" uid="uid://yd6k8m8c158b" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Textures/idle_kobold_315-0.png" id="32_clw85"]
 [ext_resource type="Texture2D" uid="uid://bcajqgl3yftev" path="res://Assets/Game Assets/Kobold/newkobold/Idle_animation/Normal Textures/kobold_idle_315-0.png" id="33_de732"]
+[ext_resource type="AudioStream" uid="uid://cbbw4g7bgof8k" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX.ogg" id="34_7i0ir"]
+[ext_resource type="AudioStream" uid="uid://dn60eo2lfav1o" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_1.ogg" id="35_ufdbj"]
+[ext_resource type="AudioStream" uid="uid://b27g42se5sa07" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_10.ogg" id="36_gff6s"]
+[ext_resource type="AudioStream" uid="uid://8oimhbmq4f3a" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_11.ogg" id="37_clw85"]
+[ext_resource type="AudioStream" uid="uid://dp6s7tomfbvr0" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_12.ogg" id="38_de732"]
+[ext_resource type="AudioStream" uid="uid://bnuty311l2ghu" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_13.ogg" id="39_2ch2s"]
+[ext_resource type="AudioStream" uid="uid://b41qxke7os58a" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_2.ogg" id="40_nuuap"]
+[ext_resource type="AudioStream" uid="uid://c6jex12w7torb" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_3.ogg" id="41_m4o2v"]
+[ext_resource type="AudioStream" uid="uid://bwjfoa0gn024m" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_4.ogg" id="42_wphrh"]
+[ext_resource type="AudioStream" uid="uid://bn8m5hccdcias" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_5.ogg" id="43_vxhwj"]
+[ext_resource type="AudioStream" uid="uid://cwc0xm22lwk27" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_6.ogg" id="44_j6e6r"]
+[ext_resource type="AudioStream" uid="uid://xebc37k4ja1t" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_7.ogg" id="45_wqbuy"]
+[ext_resource type="AudioStream" uid="uid://gjhj6jcni1j1" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_8.ogg" id="46_x2ol7"]
+[ext_resource type="AudioStream" uid="uid://by53qcuc688w4" path="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_9.ogg" id="47_noiao"]
+[ext_resource type="AudioStream" uid="uid://dkr4s7pqqon87" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX.ogg" id="48_pv3ud"]
+[ext_resource type="AudioStream" uid="uid://bfeu87h0705rc" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_1.ogg" id="49_f0g3d"]
+[ext_resource type="AudioStream" uid="uid://x056olejx75h" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_10.ogg" id="50_1mu88"]
+[ext_resource type="AudioStream" uid="uid://bcw6pgouiws0g" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_2.ogg" id="51_fmii4"]
+[ext_resource type="AudioStream" uid="uid://b3louop8w6uc2" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_3.ogg" id="52_murhm"]
+[ext_resource type="AudioStream" uid="uid://cm846t43y144o" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_4.ogg" id="53_gmpck"]
+[ext_resource type="AudioStream" uid="uid://c3t6pusqthhn4" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_5.ogg" id="54_yrdb1"]
+[ext_resource type="AudioStream" uid="uid://bkq32hboncysr" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_6.ogg" id="55_1pomr"]
+[ext_resource type="AudioStream" uid="uid://c6oubsrytltkl" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_7.ogg" id="56_mugpj"]
+[ext_resource type="AudioStream" uid="uid://f8rwffkpbgjw" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_8.ogg" id="57_x8qua"]
+[ext_resource type="AudioStream" uid="uid://c8ujsj2tmkio5" path="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_9.ogg" id="58_o6mih"]
+[ext_resource type="AudioStream" uid="uid://ciq1esyr3j2l6" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX.ogg" id="59_xrovb"]
+[ext_resource type="AudioStream" uid="uid://dwutbhjh1dw0w" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_1.ogg" id="60_kxt7j"]
+[ext_resource type="AudioStream" uid="uid://bpot6bxakxqii" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_2.ogg" id="61_c6wcl"]
+[ext_resource type="AudioStream" uid="uid://cr2xi3ye1apvs" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_3.ogg" id="62_guvg2"]
+[ext_resource type="AudioStream" uid="uid://ctt2170cauxnl" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_4.ogg" id="63_smx5q"]
+[ext_resource type="AudioStream" uid="uid://nks7e5fu5hj3" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_5.ogg" id="64_t6tyq"]
+[ext_resource type="AudioStream" uid="uid://xk08hlcu3l3i" path="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX_6.ogg" id="65_kvgof"]
+[ext_resource type="AudioStream" uid="uid://cmv1jrjbn4rp4" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 4.ogg" id="66_f0g3d"]
+[ext_resource type="AudioStream" uid="uid://dojxnsrf8o151" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 5.ogg" id="67_smx5q"]
+[ext_resource type="AudioStream" uid="uid://c64nokuic7h8o" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 14.ogg" id="68_t6tyq"]
+[ext_resource type="AudioStream" uid="uid://c55dsd46olvis" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 15.ogg" id="69_kvgof"]
+[ext_resource type="AudioStream" uid="uid://cihjosibbpas4" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 16.ogg" id="70_r80k8"]
+[ext_resource type="AudioStream" uid="uid://blsetuo6bg8ut" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 17.ogg" id="71_gg441"]
+[ext_resource type="AudioStream" uid="uid://c2q2mtkcdf4fb" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 18.ogg" id="72_ewpe7"]
+[ext_resource type="AudioStream" uid="uid://bunjqdat8emxk" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 6.ogg" id="73_ilk62"]
+[ext_resource type="AudioStream" uid="uid://cip4wtlmpewti" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 7.ogg" id="74_n6erb"]
+[ext_resource type="AudioStream" uid="uid://bxkk0egl55v8n" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 8.ogg" id="75_pn1md"]
+[ext_resource type="AudioStream" uid="uid://0may3vj74p5q" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 9.ogg" id="76_j1p0g"]
+[ext_resource type="AudioStream" uid="uid://ytcoc3mpx8q7" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 10.ogg" id="77_kdbi5"]
+[ext_resource type="AudioStream" uid="uid://6ilq7x2mlv7i" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 11.ogg" id="78_ytv8t"]
+[ext_resource type="AudioStream" uid="uid://b4bbji12akvor" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 12.ogg" id="79_5i3r4"]
+[ext_resource type="AudioStream" uid="uid://dx7jvk3kp1pdn" path="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 13.ogg" id="80_2jur2"]
 
 [sub_resource type="Animation" id="Animation_gs10s"]
 length = 0.001
@@ -677,7 +724,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.06667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 2,
-"values": [0, 32]
+"values": [0, 30]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -822,10 +869,10 @@ animation = &"idle_left"
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6iskt"]
-animation = &"idle_back"
+animation = &"idle_front"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k4a2f"]
-animation = &"idle_front"
+animation = &"idle_back"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_164yw"]
 animation = &"idle_top_right"
@@ -955,6 +1002,66 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_c8jyo"]
+streams_count = 14
+stream_0/stream = ExtResource("34_7i0ir")
+stream_1/stream = ExtResource("35_ufdbj")
+stream_2/stream = ExtResource("40_nuuap")
+stream_3/stream = ExtResource("41_m4o2v")
+stream_4/stream = ExtResource("42_wphrh")
+stream_5/stream = ExtResource("43_vxhwj")
+stream_6/stream = ExtResource("44_j6e6r")
+stream_7/stream = ExtResource("45_wqbuy")
+stream_8/stream = ExtResource("46_x2ol7")
+stream_9/stream = ExtResource("47_noiao")
+stream_10/stream = ExtResource("36_gff6s")
+stream_11/stream = ExtResource("37_clw85")
+stream_12/stream = ExtResource("38_de732")
+stream_13/stream = ExtResource("39_2ch2s")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r80k8"]
+random_pitch = 1.1
+streams_count = 11
+stream_0/stream = ExtResource("48_pv3ud")
+stream_1/stream = ExtResource("49_f0g3d")
+stream_2/stream = ExtResource("51_fmii4")
+stream_3/stream = ExtResource("52_murhm")
+stream_4/stream = ExtResource("53_gmpck")
+stream_5/stream = ExtResource("54_yrdb1")
+stream_6/stream = ExtResource("55_1pomr")
+stream_7/stream = ExtResource("56_mugpj")
+stream_8/stream = ExtResource("57_x8qua")
+stream_9/stream = ExtResource("58_o6mih")
+stream_10/stream = ExtResource("50_1mu88")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gg441"]
+streams_count = 7
+stream_0/stream = ExtResource("59_xrovb")
+stream_1/stream = ExtResource("60_kxt7j")
+stream_2/stream = ExtResource("61_c6wcl")
+stream_3/stream = ExtResource("62_guvg2")
+stream_4/stream = ExtResource("63_smx5q")
+stream_5/stream = ExtResource("64_t6tyq")
+stream_6/stream = ExtResource("65_kvgof")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3n0j3"]
+streams_count = 15
+stream_0/stream = ExtResource("66_f0g3d")
+stream_1/stream = ExtResource("67_smx5q")
+stream_2/stream = ExtResource("73_ilk62")
+stream_3/stream = ExtResource("74_n6erb")
+stream_4/stream = ExtResource("75_pn1md")
+stream_5/stream = ExtResource("76_j1p0g")
+stream_6/stream = ExtResource("77_kdbi5")
+stream_7/stream = ExtResource("78_ytv8t")
+stream_8/stream = ExtResource("79_5i3r4")
+stream_9/stream = ExtResource("80_2jur2")
+stream_10/stream = ExtResource("68_t6tyq")
+stream_11/stream = ExtResource("69_kvgof")
+stream_12/stream = ExtResource("70_r80k8")
+stream_13/stream = ExtResource("71_gg441")
+stream_14/stream = ExtResource("72_ewpe7")
+
 [node name="player" type="CharacterBody2D" groups=["player", "player_light"]]
 collision_layer = 17
 collision_mask = 17
@@ -965,6 +1072,9 @@ BASE_SPEED = 400.0
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D"]
+current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1040,6 +1150,25 @@ visible = false
 position = Vector2(-138, 12)
 scale = Vector2(1.2, 1.2)
 texture = SubResource("GradientTexture2D_70qsr")
+
+[node name="PotionSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_c8jyo")
+max_polyphony = 5
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_r80k8")
+volume_db = 2.0
+pitch_scale = 1.1
+max_polyphony = 2
+
+[node name="Died" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_gg441")
+volume_db = 3.0
+pitch_scale = 1.1
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_3n0j3")
+volume_db = 4.0
 
 [connection signal="area_entered" from="interactablearea" to="." method="_on_interactablearea_area_entered"]
 [connection signal="area_exited" from="interactablearea" to="." method="_on_interactablearea_area_exited"]

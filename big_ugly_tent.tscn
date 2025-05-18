@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7bb3pdbsuuhn"]
+
+[ext_resource type="Texture2D" uid="uid://csx2plvin4hd5" path="res://Assets/Game Assets/Interactables/Big_ugly_tent/big_ugly_tent_diffuse.png" id="1_g3fao"]
+[ext_resource type="Script" uid="uid://d168r0vvmr1xc" path="res://big_ugly_tent.gd" id="1_te47k"]
+[ext_resource type="Texture2D" uid="uid://ceywtnmgq25ge" path="res://Assets/Game Assets/Interactables/Big_ugly_tent/big_ugly_tent_normal.png" id="2_te47k"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_2qgtp"]
+diffuse_texture = ExtResource("1_g3fao")
+normal_texture = ExtResource("2_te47k")
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_2qgtp"]
+points = PackedVector2Array(390, -272, -41, -283, -299, 28, -225, 123, 187, 183, 680, 111, 671, 35)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_te47k"]
+polygon = PackedVector2Array(-539, -68, -505, -431, -227, -763, 231, -755, 520, -427, 562, -65, 537, -67, 482, -421, 217, -727, -214, -737, -481, -425, -516, -74)
+
+[node name="Big_ugly_tent" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_te47k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(10.2491, -312.087)
+scale = Vector2(0.760001, 0.760001)
+texture = SubResource("CanvasTexture_2qgtp")
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="occlusionarea" type="Area2D" parent="."]
+position = Vector2(0.173096, -678)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="occlusionarea"]
+position = Vector2(-176, 225)
+shape = SubResource("ConvexPolygonShape2D_2qgtp")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(10.2491, -312.087)
+scale = Vector2(0.760001, 0.760001)
+build_mode = 1
+polygon = PackedVector2Array(291.667, -583.333, -310.416, -593.75, -672.467, -155.149, -727.73, 327.745, -701.041, 326.041, -644.791, -152.083, -296.875, -558.333, 276.042, -546.875, 638.541, -140.625, 729.166, 330.208, 664.583, -157.292)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_te47k")
+
+[connection signal="body_entered" from="occlusionarea" to="." method="_on_occlusionarea_body_entered"]
+[connection signal="body_exited" from="occlusionarea" to="." method="_on_occlusionarea_body_exited"]

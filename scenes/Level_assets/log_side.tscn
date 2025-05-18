@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbv7vpvc324t2"]
+
+[ext_resource type="Texture2D" uid="uid://qveh726cheiy" path="res://Assets/Game Assets/Interactables/logstack side/logstack_side_diffuse.png" id="1_3dmut"]
+[ext_resource type="Texture2D" uid="uid://ceda8ao2jl7tp" path="res://Assets/Game Assets/Interactables/logstack side/logstack_side_normal.png" id="2_yysee"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_dq53l"]
+diffuse_texture = ExtResource("1_3dmut")
+normal_texture = ExtResource("2_yysee")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u025i"]
+radius = 7.95455
+
+[node name="Log_side" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, -48)
+scale = Vector2(2.96, 2.96)
+texture = SubResource("CanvasTexture_dq53l")
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(3.52, 3.52)
+shape = SubResource("CircleShape2D_u025i")
+debug_color = Color(0, 0.6, 0.701961, 0.619608)

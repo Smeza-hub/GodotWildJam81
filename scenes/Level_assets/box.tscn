@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2o5eovlhamko"]
+
+[ext_resource type="Texture2D" uid="uid://dyu7nmrl6qr5q" path="res://Assets/Game Assets/Interactables/Box/box_diffuse.png" id="1_vfurs"]
+[ext_resource type="Texture2D" uid="uid://bv13qassruwjl" path="res://Assets/Game Assets/Interactables/Box/box_normals.png" id="2_434vu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0jatf"]
+diffuse_texture = ExtResource("1_vfurs")
+normal_texture = ExtResource("2_434vu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm7bc"]
+size = Vector2(21.0227, 13.0682)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6gjb"]
+size = Vector2(95.5, 35.8057)
+
+[node name="Box" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, -31)
+scale = Vector2(2.96, 2.96)
+texture = SubResource("CanvasTexture_0jatf")
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -65)
+scale = Vector2(3.52, 3.52)
+shape = SubResource("RectangleShape2D_wm7bc")
+debug_color = Color(0, 0.6, 0.701961, 0.619608)
+
+[node name="interactablearea" type="Area2D" parent="." groups=["interactable"]]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -11)
+scale = Vector2(5, 5)
+collision_layer = 32
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactablearea"]
+position = Vector2(0, -2.8)
+shape = SubResource("RectangleShape2D_d6gjb")

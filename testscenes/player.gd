@@ -17,12 +17,17 @@ const BASE_TOLERANCE:float = 100
 @onready var hitbox: Area2D = $Hitbox
 @onready var collision: CollisionShape2D = $Collision
 @onready var vision_hitbox: Area2D = $VisionHitbox
+@onready var camera_2d: Camera2D = $Camera2D
+@onready var audio_listener_2d: AudioListener2D = $Camera2D/AudioListener2D
+@onready var take_damage_audio: AudioStreamPlayer2D = $TakeDamage
 
 @onready var intended_dir: RayCast2D = $Intended_dir
+@onready var walk_audio: AudioStreamPlayer2D = $Walk
 
 var last_facing_direction := Vector2(0,-1)
 var Max_health: float = BASE_HEALTH
 var health: float = BASE_HEALTH
+@onready var potion_sound: AudioStreamPlayer2D = $PotionSound
 
 var max_tolerance: float = BASE_TOLERANCE
 var tolerance:float = 50
@@ -37,6 +42,8 @@ var party_value:float
 
 var direction := Vector2.ZERO
 var facing_angle: float = 0.0
+
+var is_maximized:bool = false
 
 var is_confused = false
 var confused_dir: Dictionary = {}
@@ -58,6 +65,7 @@ var active_effects = {}
 func _ready():
 	print(Config.get_config(AppSettings.CUSTOM_SECTION, "DisableVisualEffects"))
 	Global.player = self
+	audio_listener_2d.make_current()
 	speed = BASE_SPEED
 	acceleration= BASE_ACCELERATION
 	set_process_input(true)
@@ -97,6 +105,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 func _process(delta: float) -> void:
 	_handle_tolerance(delta)
+	_handle_walking_audio()
 func _interact():
 	if nearby_interactables.is_empty():
 		return
@@ -162,6 +171,7 @@ func handle_teleport_movement():
 func use_item(effect1,effect2):
 	apply_effect(effect1)
 	apply_effect(effect2)
+	potion_sound.play()
 func apply_effect(effect:Callable):
 	var effect_name = effect.get_method()
 	if active_effects.has(effect_name):
@@ -176,7 +186,7 @@ func apply_effect(effect:Callable):
 		timer.start()
 	else:
 		effect.call(self)
-func take_damage(amount,enemy:Enemy,knockback):
+func take_damage(amount,enemy,knockback):
 	print("attacked")
 	if smoke_shroud_active:
 		var new_smoke_particle = smoke_particle.instantiate()
@@ -204,6 +214,7 @@ func take_damage(amount,enemy:Enemy,knockback):
 		add_child(new_smoke_particle2)
 	else:
 		player_damaged.emit()
+		take_damage_audio.play()
 		health = clamp(health-amount,0,Max_health)
 		if health < 1:
 			level_node.level_lost.emit()
@@ -227,3 +238,12 @@ func _handle_tolerance(delta):
 	else:
 		is_drunk = false
 		in_withdrawal = false
+func _handle_walking_audio():
+	if velocity.length() >0:
+		if !walk_audio.playing:
+			print("playing audio")
+			walk_audio.play()
+	else:
+		walk_audio.stop()
+					
+			

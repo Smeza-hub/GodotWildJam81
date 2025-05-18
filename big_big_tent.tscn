@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctwpwy4137pc0"]
+
+[ext_resource type="Script" uid="uid://bcpd8v2gay735" path="res://BigBoxTEnt.gd" id="1_qrecl"]
+[ext_resource type="Texture2D" uid="uid://ow2ckemwpxti" path="res://Assets/Game Assets/Interactables/BIGBIGtent/big_big_BIG_tent_diffuse.png" id="2_wbceb"]
+[ext_resource type="Texture2D" uid="uid://fd46neyg433v" path="res://Assets/Game Assets/Interactables/BIGBIGtent/big_big_BIG_tent_normal.png" id="3_2hw85"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wm44u"]
+diffuse_texture = ExtResource("2_wbceb")
+normal_texture = ExtResource("3_2hw85")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8yjkk"]
+closed = false
+cull_mode = 2
+polygon = PackedVector2Array(-188.42, 566, -374.42, 560, -655.42, 395, -769.42, 133, -538.42, -397, -304.42, -560, 3, -607, 319.58, -563, 554, -403, 766.58, 174, 662, 403, 372.58, 573, 203.58, 572)
+
+[node name="BigBigTent" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_qrecl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.579956, -379)
+texture = SubResource("CanvasTexture_wm44u")
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.579956, -379)
+polygon = PackedVector2Array(-211, 490, -218, 526, -409, 483, -648.42, 400, -774.42, 124, -681.42, -249, -576.42, -404, -336.42, -549, -3, -611, 330, -564, 543, -404, 652.4, -241, 816.4, 9, 797.4, 173, 692.58, 355, 382.58, 509, 279.58, 537, 277, 513, 618, 359, 694, 105, 515, -388, 305, -539, -3, -570, -301, -498, -558, -222, -662, 111, -405, 437)
+
+[node name="occlusionarea" type="Area2D" parent="."]
+position = Vector2(-0.579956, -379)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="occlusionarea"]
+polygon = PackedVector2Array(-465, 355, 609, 359, 692, 106, 508, -380, 300, -543, -13, -565, -294, -496, -553, -224, -658, 106)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-0.579956, -379)
+occluder = SubResource("OccluderPolygon2D_8yjkk")
+
+[connection signal="body_entered" from="occlusionarea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="occlusionarea" to="." method="_on_area_2d_body_exited"]

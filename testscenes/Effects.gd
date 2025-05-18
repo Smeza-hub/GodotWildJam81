@@ -101,11 +101,13 @@ static func maximize(player:Player):
 		func():
 			player.sprite_2d.scale = player.SPRITE_BASE_SCALE * 2
 			player.hitbox.scale = player.BASE_SCALE *2
-			player.collision.scale = player.BASE_SCALE *2,
+			player.collision.scale = player.BASE_SCALE *2
+			player.is_maximized = true,
 		func():
 			player.sprite_2d.scale = player.SPRITE_BASE_SCALE
 			player.hitbox.scale = player.BASE_SCALE
-			player.collision.scale = player.BASE_SCALE,
+			player.collision.scale = player.BASE_SCALE
+			player.is_maximized = false,
 		
 	)
 

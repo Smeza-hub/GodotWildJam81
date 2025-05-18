@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://csl8a28gw2pv8" path="res://scenes/overlaid_menus/pause_menu.tscn" id="5_f5dc3"]
 [ext_resource type="Texture2D" uid="uid://b25lo5bgcepso" path="res://Assets/Game Assets/TopDownTileset.png" id="6_ewnc4"]
 [ext_resource type="PackedScene" uid="uid://ddos4fllxhx5u" path="res://testscenes/Player.tscn" id="7_v1j4m"]
-[ext_resource type="PackedScene" uid="uid://x14jnyuvpbbr" path="res://testscenes/tent.tscn" id="8_a285h"]
+[ext_resource type="PackedScene" uid="uid://x14jnyuvpbbr" path="res://scenes/Level_assets/tent.tscn" id="8_a285h"]
 [ext_resource type="PackedScene" uid="uid://oqq0lnvs6h50" path="res://enemy.tscn" id="9_0jw36"]
 [ext_resource type="PackedScene" uid="uid://d125iv1ka74xk" path="res://testscenes/level_end.tscn" id="10_fuux8"]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfeu87h0705rc"
+path="res://.godot/imported/Pain SFX_1.ogg-31035fae63ace724a8085347ebebad5b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Game Assets/Audio/Kobold/Take_damage/Pain SFX_1.ogg"
+dest_files=["res://.godot/imported/Pain SFX_1.ogg-31035fae63ace724a8085347ebebad5b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

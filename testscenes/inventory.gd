@@ -25,7 +25,7 @@ extends Control
 @onready var collision_polygon_2d_3: CollisionPolygon2D = %CollisionPolygon2D3
 
 @onready var h_box_container: HBoxContainer = $HBoxContainer
-@onready var drunkeffects: ColorRect = $Drunkeffects
+@onready var drunkeffects: ColorRect = %Drunkeffects
 @onready var health_sprite: AnimatedSprite2D = %"Health Sprite"
 @onready var withdrawal_sprite: AnimatedSprite2D = %WithdrawalSprite
 @onready var animation_tree: AnimationTree = $SubViewportContainer2/SubViewport2/AnimationTree
@@ -59,6 +59,8 @@ func _ready() -> void:
 	drunkeffects.visible = false
 	update_slots()
 	turn_off_shader(potion_slot_1_sprite)
+	for i in potion_sprites.size():
+		potion_sprites[i].get_child(0).visible = false
 	player.player_damaged.connect(_took_damage)
 
 func _process(delta: float) -> void:
@@ -68,9 +70,12 @@ func _process(delta: float) -> void:
 	withdrawal_sprite.scale.y = lerp(withdrawal_sprite.scale.y, w_target_scale_y, delta * 10.0)
 	for i in slots.size():
 		if slots[i].has_focus():
-			turn_on_shader(potion_sprites[i])
+			#turn_on_shader(potion_sprites[i])
+			potion_sprites[i].get_child(0).visible = true
+			
 		else:
 			turn_off_shader(potion_sprites[i])
+			potion_sprites[i].get_child(0).visible = false
 	var direction = Input.get_axis("right","left")
 	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
@@ -85,20 +90,16 @@ func _process(delta: float) -> void:
 		return
 	else:
 		if player.is_drunk or player.in_withdrawal:
+			drunk = true
 			drunkeffects.visible = true
-			var tween = create_tween()
-			var drunk_refraction = drunkeffects.material
-			tween.tween_property(drunk_refraction,"shader_parameter/refraction_strength",0.02,1.0)
 		else:
-			var tween = create_tween()
-			var drunk_refraction = drunkeffects.material
-			tween.tween_property(drunk_refraction,"shader_parameter/refraction_strength",0,1.0)
-			await tween.finished
+			drunk = false
 			drunkeffects.visible = false
-	if player.in_withdrawal or player.is_drunk:
-		drunk = true
+	if player.is_maximized:
+		portrait_sprite.scale = Vector2(0.6,0.6)
 	else:
-		drunk = false
+		portrait_sprite.scale =Vector2( 0.24, 0.24)
+		
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left"):
 		apply_sway_inst(-1)
@@ -175,6 +176,9 @@ func update_slots():
 	potion_slot_1_sprite.visible = potion_slot_1!=null
 	potion_slot_2_sprite.visible = potion_slot_2!=null
 	potion_slot_3_sprite.visible = potion_slot_3!=null
+	potion_sprites[0].get_child(0).visible = potion_slot_1 !=null
+	potion_sprites[1].get_child(0).visible = potion_slot_2 !=null
+	potion_sprites[2].get_child(0).visible = potion_slot_3 !=null
 
 	collision_polygon_2d.disabled = potion_slot_1==null
 	collision_polygon_2d_2.disabled = potion_slot_2==null
@@ -217,7 +221,7 @@ func turn_off_shader(sprite):
 	sprite.material.set_shader_parameter("line_thickness",0.0)
 	sprite.material.set_shader_parameter("line_color",Color(0,0,0,0))
 func turn_on_shader(sprite):
-	sprite.material.set_shader_parameter("line_thickness",3)
+	sprite.material.set_shader_parameter("line_thickness",6)
 	sprite.material.set_shader_parameter("line_color",Color(255,255,255,255))
 
 func _chugged():

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dp6s7tomfbvr0"
+path="res://.godot/imported/Drink SFX_12.ogg-42d4def9043d62e4cae64f7b1b8b430e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Game Assets/Audio/Kobold/Potion_chug/Drink SFX_12.ogg"
+dest_files=["res://.godot/imported/Drink SFX_12.ogg-42d4def9043d62e4cae64f7b1b8b430e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

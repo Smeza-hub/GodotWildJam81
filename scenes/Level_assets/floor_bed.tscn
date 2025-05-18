@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvbfpio4e0vge"]
+
+[ext_resource type="Texture2D" uid="uid://df7xf5j7d4alk" path="res://Assets/Game Assets/Interactables/floor bed/floor_bed_straight_diffuse.png" id="1_nqb8u"]
+[ext_resource type="Texture2D" uid="uid://bygdswc2jx3vk" path="res://Assets/Game Assets/Interactables/floor bed/floor_bed_straight_normal.png" id="2_qsgi7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rihat"]
+diffuse_texture = ExtResource("1_nqb8u")
+normal_texture = ExtResource("2_qsgi7")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hvuck"]
+radius = 7.95455
+
+[node name="FloorBed" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, 59)
+scale = Vector2(2.96, 2.96)
+texture = SubResource("CanvasTexture_rihat")
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 44)
+scale = Vector2(3.52, 3.52)
+shape = SubResource("CircleShape2D_hvuck")
+disabled = true
+debug_color = Color(0, 0.6, 0.701961, 0.619608)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://7ycnlgm6mt5d"]
+
+[ext_resource type="Texture2D" uid="uid://chqdb1wpsfclx" path="res://Assets/Game Assets/Interactables/logstack/logstack_diffuse.png" id="1_b617q"]
+[ext_resource type="Texture2D" uid="uid://b7hb5o7cqslhu" path="res://Assets/Game Assets/Interactables/logstack/logstack_normal.png" id="2_ih7j6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kqoc8"]
+diffuse_texture = ExtResource("1_b617q")
+normal_texture = ExtResource("2_ih7j6")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b617q"]
+radius = 7.95455
+
+[node name="Logs" type="StaticBody2D"]
+collision_layer = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-1, -48)
+scale = Vector2(2.96, 2.96)
+texture = SubResource("CanvasTexture_kqoc8")
+region_rect = Rect2(-1, 192, 144, 75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -48)
+scale = Vector2(3.52, 3.52)
+shape = SubResource("CircleShape2D_b617q")
+debug_color = Color(0, 0.6, 0.701961, 0.619608)

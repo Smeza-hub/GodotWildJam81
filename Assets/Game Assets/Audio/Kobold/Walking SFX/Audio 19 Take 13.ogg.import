@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dx7jvk3kp1pdn"
+path="res://.godot/imported/Audio 19 Take 13.ogg-21199762a3674cd9d6285d718a2a8fba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Game Assets/Audio/Kobold/Walking SFX/Audio 19 Take 13.ogg"
+dest_files=["res://.godot/imported/Audio 19 Take 13.ogg-21199762a3674cd9d6285d718a2a8fba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

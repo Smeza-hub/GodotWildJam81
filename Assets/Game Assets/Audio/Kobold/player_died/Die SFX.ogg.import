@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ciq1esyr3j2l6"
+path="res://.godot/imported/Die SFX.ogg-9f98d3de8503e32ba638c10861e48dfa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Game Assets/Audio/Kobold/player_died/Die SFX.ogg"
+dest_files=["res://.godot/imported/Die SFX.ogg-9f98d3de8503e32ba638c10861e48dfa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

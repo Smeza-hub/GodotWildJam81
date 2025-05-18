@@ -33,12 +33,13 @@ func _ready():
 	enemy_chase_state.lost_player.connect(fsm.change_state.bind(enemy_search_state))
 	enemy_chase_state.in_range.connect(fsm.change_state.bind(enemy_attack_state))
 	
-	enemy_search_state.search_failed.connect(fsm.change_state.bind(enemy_idle_state))
+	enemy_search_state.search_failed.connect(fsm.change_state.bind(enemy_patrol_state))
 	enemy_search_state.search_succeeded.connect(fsm.change_state.bind(enemy_chase_state))
 	
 	enemy_attack_state.player_out_of_range.connect(fsm.change_state.bind(enemy_chase_state))
 	
 	enemy_patrol_state.player_found.connect(fsm.change_state.bind(enemy_chase_state))
+	enemy_patrol_state.light_seen.connect(fsm.change_state.bind(enemy_search_state))
 func _physics_process(delta: float) -> void:
 	animation_tree.set("parameters/Walk/blend_position",target_direction)
 	animation_tree.set("parameters/Idle/blend_position",target_direction)
