@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=3 uid="uid://c1qpyqel1hfw5"]
+[gd_scene load_steps=190 format=3 uid="uid://c1qpyqel1hfw5"]
 
 [ext_resource type="Script" uid="uid://bq4yjnklcjuqy" path="res://BossEnemy.gd" id="1_ju6im"]
 [ext_resource type="Texture2D" uid="uid://b4ripli8pf1fc" path="res://Assets/Game Assets/Soldiers_1.png" id="2_yb40b"]
@@ -47,8 +47,10 @@
 [ext_resource type="Texture2D" uid="uid://drk1ardkbtxam" path="res://Assets/Game Assets/Boss/Boss_Walk_Normal_Spritesheet/Boss_Walk_Normal_0.png" id="45_54q44"]
 [ext_resource type="Texture2D" uid="uid://dwed68h4txdjb" path="res://Assets/Game Assets/Boss/Boss_Walk_Diffuse_Spritesheet/Boss_Walk_Diffuse_45.png" id="46_5knwc"]
 [ext_resource type="Texture2D" uid="uid://lgtfsgi263d8" path="res://Assets/Game Assets/Boss/Boss_Walk_Normal_Spritesheet/Boss_Walk_Normal_45.png" id="47_1a81o"]
+[ext_resource type="Texture2D" uid="uid://537hv27ujuqq" path="res://Assets/Game Assets/Boss/Boss_Idle_Diffuse_Spritesheet/Boss_Idle_Diffuse_45.png" id="48_57s5x"]
 [ext_resource type="Texture2D" uid="uid://cfwk88vaof3ok" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_270.png" id="48_uywii"]
 [ext_resource type="Texture2D" uid="uid://bqswxiep6t617" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_270.png" id="49_cbcsa"]
+[ext_resource type="Texture2D" uid="uid://dqdxfmk1ttwdx" path="res://Assets/Game Assets/Boss/Boss_Idle_Normal_Spritesheet/Boss_Idle_Normal_45.png" id="49_kt4c1"]
 [ext_resource type="Texture2D" uid="uid://b0hbsgb4uyndb" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_180.png" id="50_dpkyp"]
 [ext_resource type="Texture2D" uid="uid://db0kta8ggy346" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Normal_Spritesheet/Gaurd_Idle_Normal_180.png" id="51_ssptc"]
 [ext_resource type="Texture2D" uid="uid://harhql7k03x6" path="res://Assets/Game Assets/Guard/Idle/Gaurd_Idle_Diffuse_Spritesheet/Gaurd_Idle_Diffuse_45.png" id="52_q2x0b"]
@@ -361,62 +363,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CanvasTexture_3d3oh")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0, 25]
-}
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_2jwx8"]
-diffuse_texture = ExtResource("46_5knwc")
-normal_texture = ExtResource("47_1a81o")
-
-[sub_resource type="Animation" id="Animation_4xrqw"]
-resource_name = "Boss_Idle_Front_Left"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("CanvasTexture_2jwx8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1283,33 +1229,12 @@ tracks/2/keys = {
 "values": [32]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
-_data = {
-&"Boss_Front_Right": SubResource("Animation_x0gcn"),
-&"Boss_Idle_Back": SubResource("Animation_2rjsx"),
-&"Boss_Idle_Front_Left": SubResource("Animation_4xrqw"),
-&"Boss_walk_front": SubResource("Animation_minnm"),
-&"RESET": SubResource("Animation_gs10s"),
-&"idle_back": SubResource("Animation_70qsr"),
-&"idle_bottom_left": SubResource("Animation_ho163"),
-&"idle_bottom_right": SubResource("Animation_gmpck"),
-&"idle_front": SubResource("Animation_e3isr"),
-&"idle_left": SubResource("Animation_ov3kk"),
-&"idle_right": SubResource("Animation_noiao"),
-&"idle_top_left": SubResource("Animation_f0g3d"),
-&"idle_top_right": SubResource("Animation_fmii4"),
-&"walk_back": SubResource("Animation_0s5e8"),
-&"walk_bottom_left": SubResource("Animation_dip6k"),
-&"walk_bottom_right": SubResource("Animation_7l1ah"),
-&"walk_front": SubResource("Animation_x3b8j"),
-&"walk_left": SubResource("Animation_dk22a"),
-&"walk_right": SubResource("Animation_6hcen"),
-&"walk_top_left": SubResource("Animation_nplo3"),
-&"walk_top_right": SubResource("Animation_orc17")
-}
+[sub_resource type="CanvasTexture" id="CanvasTexture_2jwx8"]
+diffuse_texture = ExtResource("46_5knwc")
+normal_texture = ExtResource("47_1a81o")
 
-[sub_resource type="Animation" id="Animation_x0f1i"]
-resource_name = "Boss_Front_left"
+[sub_resource type="Animation" id="Animation_4xrqw"]
+resource_name = "Boss_Walk_Front_Left"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1321,7 +1246,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [SubResource("CanvasTexture_putnh")]
+"values": [SubResource("CanvasTexture_2jwx8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1358,6 +1283,31 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0, 25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6hcen"]
+_data = {
+&"Boss_Front_Right": SubResource("Animation_x0gcn"),
+&"Boss_Idle_Back": SubResource("Animation_2rjsx"),
+&"Boss_Walk_Front_Left": SubResource("Animation_4xrqw"),
+&"Boss_walk_front": SubResource("Animation_minnm"),
+&"RESET": SubResource("Animation_gs10s"),
+&"idle_back": SubResource("Animation_70qsr"),
+&"idle_bottom_left": SubResource("Animation_ho163"),
+&"idle_bottom_right": SubResource("Animation_gmpck"),
+&"idle_front": SubResource("Animation_e3isr"),
+&"idle_left": SubResource("Animation_ov3kk"),
+&"idle_right": SubResource("Animation_noiao"),
+&"idle_top_left": SubResource("Animation_f0g3d"),
+&"idle_top_right": SubResource("Animation_fmii4"),
+&"walk_back": SubResource("Animation_0s5e8"),
+&"walk_bottom_left": SubResource("Animation_dip6k"),
+&"walk_bottom_right": SubResource("Animation_7l1ah"),
+&"walk_front": SubResource("Animation_x3b8j"),
+&"walk_left": SubResource("Animation_dk22a"),
+&"walk_right": SubResource("Animation_6hcen"),
+&"walk_top_left": SubResource("Animation_nplo3"),
+&"walk_top_right": SubResource("Animation_orc17")
 }
 
 [sub_resource type="Animation" id="Animation_idgwb"]
@@ -1412,10 +1362,119 @@ tracks/3/keys = {
 "values": [0, 25]
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_r7ntb"]
+diffuse_texture = ExtResource("48_57s5x")
+normal_texture = ExtResource("49_kt4c1")
+
+[sub_resource type="Animation" id="Animation_x0f1i"]
+resource_name = "Boss_Idle_Front_left"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_r7ntb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 25]
+}
+
+[sub_resource type="Animation" id="Animation_dlq50"]
+resource_name = "Boss_Idle_Front_Right"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CanvasTexture_r7ntb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 25]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ch1er"]
 _data = {
-&"Boss_Front_left": SubResource("Animation_x0f1i"),
-&"Boss_Idle_Front": SubResource("Animation_idgwb")
+&"Boss_Idle_Front": SubResource("Animation_idgwb"),
+&"Boss_Idle_Front_Right": SubResource("Animation_dlq50"),
+&"Boss_Idle_Front_left": SubResource("Animation_x0f1i")
 }
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_4xrqw"]
